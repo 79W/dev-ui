@@ -19,7 +19,7 @@
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
-    "*.{js,jsx,less,md,json}": [
+    "*.{js,jsx,tsxless}": [
       "eslint --fix"
     ],
     "*.ts?(x)": [
