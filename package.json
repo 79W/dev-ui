@@ -1,0 +1,41 @@
+{
+  "private": true,
+  "name": "dev-ui",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "dumi dev",
+    "docs:build": "dumi build",
+    "docs:deploy": "gh-pages -d docs-dist",
+    "build": "father-build",
+    "deploy": "npm run docs:build && npm run docs:deploy",
+    "test": "umi-test",
+    "test:coverage": "umi-test --coverage",
+    "prepublishOnly": "npm run build",
+    "lint": "eslint \"src/**/*.{ts,tsx}\""
+  },
+  "module": "es/index.js",
+  "typings": "es/index.d.ts",
+  "dependencies": {
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.15.1",
+    "@testing-library/react": "^12.1.2",
+    "@types/jest": "^27.0.3",
+    "@typescript-eslint/eslint-plugin": "^5.27.1",
+    "@typescript-eslint/parser": "^5.27.1",
+    "@umijs/test": "^3.0.5",
+    "dumi": "^1.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-react": "^7.30.0",
+    "eslint-plugin-react-hooks": "^4.5.0",
+    "f2-touchemulator": "^0.0.1",
+    "father-build": "^1.17.2",
+    "gh-pages": "^3.0.0",
+    "qrcode.react": "^3.0.2",
+    "umi-hd": "^5.0.1",
+    "yorkie": "^2.0.0"
+  }
+}
