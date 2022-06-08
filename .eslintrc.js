@@ -2,12 +2,14 @@ module.exports = {
   'env': {
     'browser': true,
     'es6': true,
+    'node': true,
   },
   'extends': [
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:eslint-plugin-import',
     'prettier',
   ],
   'parser': '@typescript-eslint/parser',
@@ -15,7 +17,7 @@ module.exports = {
     'project': 'tsconfig.json',
     'sourceType': 'module',
   },
-  'plugins': ['@typescript-eslint', 'import'],
+  'plugins': ['@typescript-eslint'],
   'rules': {
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',

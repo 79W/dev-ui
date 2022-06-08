@@ -13,9 +13,7 @@
     "baseUrl": "./",
     "typeRoots": [],
     "lib": ["ES2015", "DOM"],
-    "paths": {
-
-    },
+    "paths": {},
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
     "strict": true,
