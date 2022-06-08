@@ -68,17 +68,17 @@
 .@{prefix}-mobile-content {
   display: flex;
   align-items: flex-start;
-  background-color: #ffffff;
-  padding: 20px 30px;
-  border-radius: 20px;
-
-  [data-prefers-color=dark] & {
-    background-color: @c-bg-dark !important;
-  }
 
   > article {
     flex: 1;
     min-width: 0;
+    background-color: #ffffff;
+    padding: 20px 30px;
+    border-radius: 20px;
+    
+    [data-prefers-color=dark] & {
+      background-color: @c-bg-dark !important;
+    }
 
     > .markdown:first-child > *:first-child {
       margin-top: 0;

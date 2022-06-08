@@ -18,7 +18,9 @@ const Device: FC<IDeviceProps> = ({ url, className }) => {
   const {
     config: { mode, theme },
   } = useContext(context)
+
   const carrier = theme?.carrier || 'dumi'
+  const time = theme?.time || '10:24'
 
   // re-render iframe if prefers color changed
   useEffect(() => {
@@ -56,7 +58,7 @@ const Device: FC<IDeviceProps> = ({ url, className }) => {
     >
       <div className='__dumi-default-device-status'>
         <span className='__dumi-default-device-status-carrier'>{carrier}</span>
-        <span>10:24</span>
+        <span>{time}</span>
       </div>
       <iframe
         ref={iframeRef}

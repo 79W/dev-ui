@@ -95,6 +95,8 @@ export default defineConfig({
       ],
       // 更多 rule 配置访问 https://github.com/umijs/dumi/blob/master/packages/theme-mobile/src/typings/config.d.ts#L7
     },
+    carrier: 'Aunt',
+    time: '10:12'
   },
   navs: {
     zh: [
