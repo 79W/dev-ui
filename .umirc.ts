@@ -3,8 +3,8 @@ import { defineConfig } from 'dumi'
 export default defineConfig({
   title: 'Aunt Design',
   favicon:
-    'https://cdn.jsdelivr.net/gh/duogongneng/OneMyBlogImg@master/logo_rant.png',
-  logo: 'https://cdn.jsdelivr.net/gh/duogongneng/OneMyBlogImg@master/logo_rant.png',
+    'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-ad8d1200-2a6b-490b-8915-4f015cc6cc87/a63c026a-72dd-4b03-a1fc-f441bf1fc453.svg',
+  logo: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-ad8d1200-2a6b-490b-8915-4f015cc6cc87/a63c026a-72dd-4b03-a1fc-f441bf1fc453.svg',
   outputPath: 'docs-dist',
   mode: 'site',
   locales: [
@@ -80,8 +80,14 @@ export default defineConfig({
     ],
     '/components': [
       {
-        title: '通用',
-        children: ['components/foo'],
+        title: '基础组件',
+        children: ['components/button'],
+      },
+    ],
+    '/en/components': [
+      {
+        title: 'Basic Components',
+        children: ['components/button'],
       },
     ],
   },

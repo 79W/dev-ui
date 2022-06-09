@@ -1,17 +1,13 @@
----
-mobile: true
-demoUrl: https://d.umijs.org/zh-CN/theme#dumi-theme-mobile
----
+# Button 按钮
 
-## Foo
-
+## 介绍
 Demo:
 
 ```tsx
 import React from "react";
-import { Foo } from "dev-ui";
+import { Button } from "dev-ui";
 
-export default () => <Foo title="First Demo" />;
+export default () => <Button title="First Demo" />;
 ```
 
 ## Foo2
@@ -47,8 +43,5 @@ export default () => <Foo title="First Demo" />;
 ```
 
 <API src="./index.ts"></API>
-
-More skills for writing demo: https://d.umijs.org/guide/basic#write-component-demo
-
 
 <code hidden="hidden" src="./demos/demo.tsx"></code>
