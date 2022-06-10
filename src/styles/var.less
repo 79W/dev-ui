@@ -1,29 +1,21 @@
+@import './colors.less';
+
 // 基本单位
 @hd: 1px;
 
 // 全局/品牌色
-@brand-color: #3f45ff;
+@brand-color: @blue-6;
 
 // Color Palette
 @black: #000;
 @white: #fff;
-@gray-1: #f7f8fa;
-@gray-2: #f2f3f5;
-@gray-3: #ebedf0;
-@gray-4: #dcdee0;
-@gray-5: #c8c9cc;
-@gray-6: #969799;
-@gray-7: #646566;
-@gray-8: #323232;
 @blue: @brand-color;
-@red: #f44336;
-@orange: #ff976a;
-@orange-dark: #ff590d;
-@orange-light: #fffbe8;
-@green: #00c853;
+@red: @red-6;
+@orange: @orange-6;
+@green: @green-6;
 
-// The prefix to use on all css classes from react-vant.
-@rv-prefix: rv;
+// The prefix to use on all css classes from react-aunt.
+@aunt-prefix: aunt;
 
 // Grid system
 @grid-columns: 24;
@@ -33,15 +25,15 @@
 @gradient-orange: linear-gradient(to right, #ffd01e, #ff8917);
 
 // Component Colors
-@primary-color: var(--rv-blue);
-@success-color: var(--rv-green);
-@danger-color: var(--rv-red);
-@warning-color: var(--rv-orange);
-@text-color: var(--rv-gray-8);
-@active-color: var(--rv-gray-2);
+@primary-color: @brand-color;
+@success-color: @success-6;
+@danger-color: @danger-6;
+@warning-color: @warning-6;
+@text-color: @gray-8;
+@active-color: @gray-2;
 @active-opacity: 0.7;
 @disabled-opacity: 0.5;
-@background-color: var(--rv-gray-1);
+@background-color: @gray-1;
 @background-color-light: #fafafa;
 @text-link-color: #576b95;
 
@@ -80,7 +72,7 @@
 @animation-timing-function-leave: ease-in;
 
 // Border
-@border-color: var(--rv-gray-3);
+@border-color: @gray-3;
 @border-width-base: 1 * @hd;
 @border-radius-sm: 2 * @hd;
 @border-radius-md: 4 * @hd;
