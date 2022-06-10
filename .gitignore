@@ -7,9 +7,28 @@
 /yarn.lock
 /package-lock.json
 
+.doc/
+.umi/
+.umi-production/
+/report/
+/report.json
+/report.html
+
 # production
 /es
 /docs-dist
+
+# build
+/dist/
+/lib/
+/es/
+/cjs/
+/umd/
+
+
+/.vscode/
+/.idea/
+
 
 # misc
 .DS_Store

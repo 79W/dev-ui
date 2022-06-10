@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "rootDirs": ["src"],
+    "rootDirs": ["src","config"],
     "target": "ES6",
     "moduleResolution": "node",
     "jsx": "react",
@@ -11,9 +11,13 @@
     "downlevelIteration": true,
     "sourceMap": true,
     "baseUrl": "./",
-    "typeRoots": [],
+    "typeRoots": ["./src/typings", "./node_modules/@types"],
     "lib": ["ES2015", "DOM"],
-    "paths": {},
+    "paths": {
+      "aunt": ["src/index.ts"],
+      "aunt/src/*": ["src/*"],
+      "aunt/es/*": ["src/*"]
+    },
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
     "strict": true,
