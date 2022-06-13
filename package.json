@@ -94,6 +94,7 @@
     "postcss-px-multiple": "^0.1.5",
     "qrcode.react": "^3.0.2",
     "through2": "^4.0.2",
+    "typescript": "^4.7.3",
     "umi-hd": "^5.0.1",
     "yorkie": "^2.0.0"
   },
