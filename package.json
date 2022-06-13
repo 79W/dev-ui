@@ -62,9 +62,8 @@
     "@types/react-dom": "18"
   },
   "dependencies": {
-    "gulp-replace": "^1.1.3",
     "lodash": "^4.17.21",
-    "react": "^18.0.0",
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
     "tslib": "^2.4.0"
   },
   "devDependencies": {
@@ -88,6 +87,7 @@
     "gulp-babel": "^8.0.0",
     "gulp-less": "^5.0.0",
     "gulp-postcss": "^9.0.1",
+    "gulp-replace": "^1.1.3",
     "gulp-typescript": "^6.0.0-alpha.1",
     "less": "^4.1.3",
     "lint-staged": "^13.0.0",
