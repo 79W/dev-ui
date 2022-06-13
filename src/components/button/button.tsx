@@ -4,8 +4,9 @@ import {ButtonProps,} from './types'
 const defaultProps: ButtonProps = {
     className: '',
     color: '',
-    shape: 'square',
+    shape: 'default',
     plain: false,
+    hairline: false,
     loading: false,
     disabled: false,
     type: 'default',
@@ -22,6 +23,7 @@ export const Button:FunctionComponent<Partial<ButtonProps>> = ((props) => {
         color,
         shape,
         plain,
+        hairline,
         loading,
         disabled,
         type,
@@ -40,6 +42,7 @@ export const Button:FunctionComponent<Partial<ButtonProps>> = ((props) => {
 
     const [btnName, setBtnName] = useState('')
     const [btnStyle, setBtnStyle] = useState({})
+    
     useEffect(() => {
         setBtnName(classes())
         setBtnStyle(getStyle())
@@ -63,25 +66,23 @@ export const Button:FunctionComponent<Partial<ButtonProps>> = ((props) => {
         const prefixCls = 'aunt-button'
         return `${prefixCls} ${type ? `${prefixCls}--${type}` : ''}
         ${size ? `${prefixCls}--${size}` : ''}
-        ${shape ? `${prefixCls}--${shape}` : ''}
+        ${shape ? `${prefixCls}--shape--${shape}` : ''}
         ${plain ? `${prefixCls}--plain` : ''}
         ${block ? `${prefixCls}--block` : ''}
         ${disabled ? `${prefixCls}--disabled` : ''}
-        ${loading ? `${prefixCls}--loading` : ''}`
+        ${loading ? `${prefixCls}--loading` : ''}
+        ${hairline ? `${prefixCls}--hairline` : ''}`
     }
 
     const getStyle = () => {
         const style: CSSProperties = {}
         if (color) {
-          if (plain) {
-            style.color = color
-            style.background = '#fff'
-            if (!color?.includes('gradient')) {
-              style.borderColor = color
-            }
-          } else {
-            style.color = '#fff'
-            style.background = color
+            style.color = plain ? color : '#fff';
+            style.background = !plain ? color : '#fff';
+          if (color?.includes('gradient')) {
+            style.borderWidth = 0
+          }else{
+            style.borderColor = color
           }
         }
         return style

@@ -4,16 +4,17 @@ import React from "react"
 export type ButtonRef = {
     nativeElement: HTMLButtonElement | null
 }
-export type ButtonType = 'default' | 'primary' | 'info' | 'success' | 'warning' | 'danger'
-export type ButtonSize = 'large' | 'normal' | 'small'
-export type ButtonShape = 'square' | 'round'
+export type ButtonType = 'default' | 'primary' | 'success' | 'warning' | 'danger'
+export type ButtonSize = 'large' | 'normal' | 'small' | 'mini'
+export type ButtonShape = 'default' | 'square' | 'round'
 
 // 定义接受到的参数 类型
 export interface ButtonProps {
     className: string
     color: string
     shape: ButtonShape
-    plain: boolean
+    plain: boolean,
+    hairline: boolean,
     loading: boolean
     disabled: boolean
     style: React.CSSProperties
