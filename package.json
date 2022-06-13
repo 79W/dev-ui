@@ -21,7 +21,7 @@
     "frontend",
     "react-component"
   ],
-  "homepage": "https://aunt.github.io/",
+  "homepage": "https://github.com/79W/dev-ui",
   "license": "MIT",
   "author": "79W",
   "main": "./cjs/index.js",

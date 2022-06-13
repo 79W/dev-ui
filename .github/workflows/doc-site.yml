@@ -14,9 +14,9 @@ jobs:
       - name: Run Npm Scripts
         run: |
           node -v
-          npm -v
-          npm i
-          npm run build:docs
+          yarn -v
+          yarn
+          yarn run build:docs
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.0.0
         with:
