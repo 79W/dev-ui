@@ -94,7 +94,7 @@ export const Button:FunctionComponent<Partial<ButtonProps>> = ((props) => {
     }
 
     return <div 
-        className={`tset ${btnName} ${className}`}
+        className={`${btnName} ${className}`}
         style={{ ...btnStyle, ...style }}   
         {...rest}
         onClick={(e) => handleClick(e)}

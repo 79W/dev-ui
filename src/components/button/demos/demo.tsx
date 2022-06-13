@@ -1,5 +1,6 @@
 import React from "react";
-import { Button } from '../../../../lib/es'
+import { Button } from '../button'
+import '../styles'
 
 function Demo (){
     return <Button>看看按钮</Button>
