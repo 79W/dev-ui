@@ -81,7 +81,7 @@ export default defineConfig({
     '/components': [
       {
         title: '基础组件',
-        children: ['components/button'],
+        children: ['components/button','components/icon'],
       },
     ],
     '/en/components': [

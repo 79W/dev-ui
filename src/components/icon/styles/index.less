@@ -1,0 +1,140 @@
+
+@class-prefix-button: ~'aunt-icon';
+  
+
+.@{class-prefix-button} {
+
+    --color: var(--aunt-color-white);
+    --text-color: var(--aunt-button-text-color, var(--aunt-text-color));
+    --background-color: var(--aunt-button-background-color, var(--aunt-color-white));
+
+    --border-radius: var(--aunt-button-border-radius, calc(4*var(--aunt-hd)));
+    --border-width: var(--aunt-button-border-width, calc(1*var(--aunt-hd)));
+    --border-style: var(--aunt-button-border-style, solid);
+    --border-color: var(--aunt-button-border-color, var(--aunt-border-color));
+    
+    --button-padding: calc(8*var(--aunt-hd)) calc(12*var(--aunt-hd)) ;
+    --button-font-size: calc(14*var(--aunt-hd));
+
+    color: var(--text-color);
+    background-color: var(--background-color);
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    height: auto;
+    padding: var(--button-padding);
+    margin: 0;
+    font-size: var(--button-font-size);
+    line-height: 1.4;
+    text-align: center;
+    border: var(--border-width) var(--border-style) var(--border-color);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: opacity ease 0.15s;
+    user-select: none;
+    
+    &:focus {
+        outline: none;
+    }
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(
+          calc(var(--border-width) * -1),
+          calc(var(--border-width) * -1)
+        );
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        border: var(--border-width) var(--border-style) #000;
+        border-radius: var(--border-radius);
+        opacity: 0;
+        content: ' ';
+        box-sizing: content-box;
+    }
+    &:active::before {
+        opacity: 0.08;
+    }
+    
+    &--default{}
+
+    &--primary{
+        --background-color: var(--aunt-primary-color);
+        --text-color: var(--aunt-color-white);
+        --border-color: var(--aunt-primary-color);
+    }
+    &--success{
+        --background-color: var(--aunt-success-color);
+        --text-color: var(--aunt-color-white);
+        --border-color: var(--aunt-success-color);
+    }
+    &--warning{
+        --background-color: var(--aunt-warning-color);
+        --text-color: var(--aunt-color-white);
+        --border-color: var(--aunt-warning-color);
+    }
+    &--danger{
+        --background-color: var(--aunt-danger-color);
+        --text-color: var(--aunt-color-white);
+        --border-color: var(--aunt-danger-color);
+    }
+    &--plain{
+        --background-color: var(--aunt-color-white);
+        
+        &.@{class-prefix-button}--primary {
+            --text-color: var(--aunt-primary-color) ;
+        }
+      
+        &.@{class-prefix-button}--success {
+            --text-color: var(--aunt-success-color);
+        }
+      
+        &.@{class-prefix-button}--danger {
+            --text-color: var(--aunt-danger-color);
+        }
+      
+        &.@{class-prefix-button}--warning {
+            --text-color: var(--aunt-warning-color);
+        }
+    }   
+
+    &--hairline{
+        --border-width:calc(0.5 * var(--aunt-hd));
+    }
+
+    &--large {
+        width: 100%;
+        --button-padding:calc(12*var(--aunt-hd)) calc(8*var(--aunt-hd));
+    }
+
+    &--normal {}
+    
+    &--small {
+        --button-padding:calc(6*var(--aunt-hd)) calc(8*var(--aunt-hd));
+        --button-font-size: calc(10*var(--aunt-hd));
+    }
+
+    &--shape{
+        &--default{}
+        &--square{
+            --border-radius:calc(0*var(--aunt-hd));
+        }
+        &--round{
+            --border-radius:calc(999*var(--aunt-hd));;
+        }
+    }
+    
+    &--block {
+        display: block;
+        width: 100%;
+    }
+
+    &--disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+        &::before {
+            display: none;
+        }
+    }
+}
