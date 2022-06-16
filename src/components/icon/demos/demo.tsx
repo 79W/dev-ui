@@ -34,7 +34,7 @@ import { AuntIconActivity,AuntIconAirplay,
     AuntIconUpload,AuntIconUserCheck,AuntIconUserMinus,AuntIconUserPlus,AuntIconUserX,AuntIconUser,AuntIconUsers,AuntIconVideoOff,AuntIconVideo,AuntIconVoicemail,
     AuntIconVolumeOne,AuntIconVolumeTwo,AuntIconVolumeX,AuntIconVolume,AuntIconWatch,AuntIconWifiOff,AuntIconWifi,AuntIconWind,AuntIconXCircle,AuntIconXOctagon,
     AuntIconXSquare,AuntIconX,AuntIconYoutube,AuntIconZapOff,AuntIconZap,AuntIconZoomIn,AuntIconZoomOut } from '../../../index'
-import '../styles'
+import '../styles/index'
 
 const iconsList = [
     {
@@ -2057,7 +2057,7 @@ function Demo (){
             justifyContent:'space-between',
             flexWrap:'wrap'
         }}>
-            {
+            {/* {
                 iconsList.map((item)=>{
                     return  <div style={{
                         width:60,
@@ -2074,7 +2074,22 @@ function Demo (){
                         height:30,
                     } }) } </div>
                 })
-            }
+            } */}
+
+
+                <div style={{
+                        width:60,
+                        height:60,
+                        background:'#fff',
+                        display:'flex',
+                        alignItems:'center',
+                        justifyContent:'center',
+                        margin:5,
+                        borderRadius:10,
+                        cursor:'pointer'
+                    }} >
+                        <AuntIconRotateCw  spin /> 
+                    </div>
         </div>
     </div>
 }

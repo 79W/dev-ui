@@ -1,5 +1,7 @@
 // 定义接受到的参数 类型
 export interface IconProps extends React.SVGProps<SVGSVGElement> {
+    // 层级
+    tabIndex?: number,
     // 背景颜色
     color?: string,
     // 大小

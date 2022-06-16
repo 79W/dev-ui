@@ -7,6 +7,8 @@ const Icon = forwardRef<SVGSVGElement,IconProps>((props,ref) => {
         className,
         style,
         spin,
+        color,
+        size,
         rotate,
         tabIndex,
         onClick,
@@ -16,13 +18,17 @@ const Icon = forwardRef<SVGSVGElement,IconProps>((props,ref) => {
     
     function kebabCase(str: string): string {
         return str
-          .substring(3)
           .replace(/([A-Z])/g, '-$1')
           .toLowerCase()
           .replace(/^-/, '');
     }
 
     const svgStyle = {} as React.CSSProperties;
+
+    if (rotate) {
+      svgStyle.msTransform = `rotate(${rotate}deg)`;
+      svgStyle.transform = `rotate(${rotate}deg)`;
+    }
     
     const kebabCaseName = name ? kebabCase(name) : undefined;
     
@@ -33,22 +39,22 @@ const Icon = forwardRef<SVGSVGElement,IconProps>((props,ref) => {
 
     const attrs = {
         role: 'img',
-        'aria-label': kebabCaseName,
         focusable: 'false',
-        'data-icon': kebabCaseName,
+        'aria-label': kebabCaseName,
         'aria-hidden': 'true',
+        'data-icon': kebabCaseName,
         preserveAspectRatio: 'xMidYMid meet',
         ref,
         tabIndex: iconTabIndex,
         onClick,
         className: [
-          'rv-icon',
-          kebabCaseName ? `rv-icon-${kebabCaseName}` : '',
-          spin ? 'rv-icon--spin' : '',
+          kebabCaseName ? `aunt-icon-${kebabCaseName}` : '',
+          spin ? 'aunt-icon--spin' : '',
           className,
-        ]
-          .join(' ')
-          .trim(),
+        ].join(' ').trim(),
+        width: size ? size : "24",
+        height: size ? size : "24",
+        stroke: color ? color : "currentColor",
         style: { ...style, ...svgStyle },
         ...restProps,
     };
