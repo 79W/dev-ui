@@ -23,5 +23,5 @@ export interface ButtonProps {
     block: boolean
     icon: string
     children: any
-    onClick: (e: MouseEvent) => void
+    onClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void | Promise<void>
 }

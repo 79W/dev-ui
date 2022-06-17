@@ -15,7 +15,7 @@ const defaultProps: ButtonProps = {
     icon: '',
     style: {},
     children: undefined,
-    onClick: (e: MouseEvent) => {},
+    onClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {},
 }
 
 export const Button:FunctionComponent<Partial<ButtonProps>> = ((props) => {

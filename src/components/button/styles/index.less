@@ -12,7 +12,7 @@
     --border-style: var(--aunt-button-border-style, solid);
     --border-color: var(--aunt-button-border-color, var(--aunt-border-color));
     
-    --button-padding: calc(8*var(--aunt-hd)) calc(12*var(--aunt-hd)) ;
+    --button-padding: calc(10*var(--aunt-hd)) calc(14*var(--aunt-hd)) ;
     --button-font-size: calc(14*var(--aunt-hd));
 
     color: var(--text-color);
@@ -104,13 +104,18 @@
 
     &--large {
         width: 100%;
-        --button-padding:calc(12*var(--aunt-hd)) calc(8*var(--aunt-hd));
+        --button-padding:calc(14*var(--aunt-hd)) calc(10*var(--aunt-hd));
     }
 
     &--normal {}
     
     &--small {
-        --button-padding:calc(6*var(--aunt-hd)) calc(8*var(--aunt-hd));
+        --button-padding:calc(8*var(--aunt-hd)) calc(10*var(--aunt-hd));
+        --button-font-size: calc(12*var(--aunt-hd));
+    }
+    
+    &--mini {
+        --button-padding:calc(4*var(--aunt-hd)) calc(8*var(--aunt-hd));
         --button-font-size: calc(10*var(--aunt-hd));
     }
 
