@@ -1,5 +1,4 @@
-import './styles/index'
-
+import './styles/index.less'
 import { Button } from './button'
 
 export type {

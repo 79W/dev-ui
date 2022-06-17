@@ -62,7 +62,7 @@
     "@types/react-dom": "18"
   },
   "dependencies": {
-    "kf-ui": "^0.0.0-alpha.2",
+    "kf-ui": "^0.0.0-alpha.3",
     "lodash": "^4.17.21",
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
     "tslib": "^2.4.0"

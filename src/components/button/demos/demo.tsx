@@ -2,7 +2,6 @@ import React from "react";
 import { Button } from 'kf-ui'
 import './demo.less'
 
-
 function Demo (){
     return <div className="demo">
         <p className="demo-title" >按钮类型</p>
