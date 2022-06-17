@@ -1,94 +1,46 @@
 import React from "react";
 import {AuntIconActivity,AuntIconAlertOctagon,AuntIconLoader,AuntIconFileMinus} from 'kf-ui'
-
+import './index.less'
 
 function Demo (){
-    return <div style={{padding:10,}}>
-        <h2 style={{fontSize:20,color:'#333'}}>基础使用</h2>
-        <div style={{
-            display:'flex',
-            alignItems:'center',
-            justifyContent:'space-between',
-            flexWrap:'wrap'
-        }}>
-            <div style={{
-                    width:60,
-                    height:60,
-                    background:'#fff',
-                    display:'flex',
-                    alignItems:'center',
-                    justifyContent:'center',
-                    margin:5,
-                    borderRadius:10,
-                    cursor:'pointer'
-                }} >
+    return <div className="demo-icon">
+        <p className="demo-icon-title">基础使用</p>
+        <div className="demo-icon-content">
+            <div className="demo-icon-card" style={{
+                width:60,
+                height:60
+            }}>
                     <AuntIconActivity /> 
             </div>
         </div>
-        <h2 style={{fontSize:20,color:'#333'}}>图标颜色</h2>
-        <div style={{
-            display:'flex',
-            alignItems:'center',
-            flexWrap:'wrap'
-        }}>
-            <div style={{
-                    width:60,
-                    height:60,
-                    background:'#fff',
-                    display:'flex',
-                    alignItems:'center',
-                    justifyContent:'center',
-                    margin:5,
-                    borderRadius:10,
-                    cursor:'pointer'
-                }} >
+        <p className="demo-icon-title">图标颜色</p>
+        <div className="demo-icon-content">
+            <div className="demo-icon-card" style={{
+                width:60,
+                height:60
+            }}>
                     <AuntIconActivity color="#f44336" />
                     
             </div>
-            <div style={{
-                    width:60,
-                    height:60,
-                    background:'#fff',
-                    display:'flex',
-                    alignItems:'center',
-                    justifyContent:'center',
-                    margin:5,
-                    borderRadius:10,
-                    cursor:'pointer'
-                }} >
+            <div className="demo-icon-card" style={{
+                width:60,
+                height:60
+            }} >
                     <AuntIconAlertOctagon color="#3f45ff" />
             </div>
         </div>
-        <h2 style={{fontSize:20,color:'#333'}}>图标旋转</h2>
-        <div style={{
-            display:'flex',
-            alignItems:'center',
-            flexWrap:'wrap'
-        }}>
-            <div style={{
-                    width:60,
-                    height:60,
-                    background:'#fff',
-                    display:'flex',
-                    alignItems:'center',
-                    justifyContent:'center',
-                    margin:5,
-                    borderRadius:10,
-                    cursor:'pointer'
-                }} >
+        <p className="demo-icon-title">图标旋转</p>
+        <div className="demo-icon-content">
+            <div className="demo-icon-card" style={{
+                width:60,
+                height:60
+            }} >
                     <AuntIconLoader spin />
             </div>
-            <div style={{
-                    width:60,
-                    height:60,
-                    background:'#fff',
-                    display:'flex',
-                    alignItems:'center',
-                    justifyContent:'center',
-                    margin:5,
-                    borderRadius:10,
-                    cursor:'pointer'
-                }} >
+            <div className="demo-icon-card" style={{
+                width:60,
+                height:60
+            }} >
                     <AuntIconFileMinus spin />
             </div>
         </div>
