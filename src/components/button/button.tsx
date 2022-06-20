@@ -1,6 +1,8 @@
 import React, { CSSProperties, FunctionComponent, useEffect, useState } from 'react'
 import {ButtonProps,} from './types'
 
+const classPrefix = 'aunt-button'
+
 const defaultProps: ButtonProps = {
     className: '',
     color: '',
@@ -40,11 +42,11 @@ export const Button:FunctionComponent<Partial<ButtonProps>> = ((props) => {
         ...props
     }
 
-    const [btnName, setBtnName] = useState('')
+    const [buttonClassName, setButtonClassName] = useState('')
     const [btnStyle, setBtnStyle] = useState({})
     
     useEffect(() => {
-        setBtnName(classes())
+        setButtonClassName(classes())
         setBtnStyle(getStyle())
     }, [
         className,
@@ -63,15 +65,14 @@ export const Button:FunctionComponent<Partial<ButtonProps>> = ((props) => {
     ])
 
     const classes = () => {
-        const prefixCls = 'aunt-button'
-        return `${prefixCls} ${type ? `${prefixCls}--${type}` : ''}
-        ${size ? `${prefixCls}--${size}` : ''}
-        ${shape ? `${prefixCls}--shape--${shape}` : ''}
-        ${plain ? `${prefixCls}--plain` : ''}
-        ${block ? `${prefixCls}--block` : ''}
-        ${disabled ? `${prefixCls}--disabled` : ''}
-        ${loading ? `${prefixCls}--loading` : ''}
-        ${hairline ? `${prefixCls}--hairline` : ''}`
+        return `${classPrefix} ${type ? `${classPrefix}--${type}` : ''}
+        ${size ? `${classPrefix}--${size}` : ''}
+        ${shape ? `${classPrefix}--shape--${shape}` : ''}
+        ${plain ? `${classPrefix}--plain` : ''}
+        ${block ? `${classPrefix}--block` : ''}
+        ${disabled ? `${classPrefix}--disabled` : ''}
+        ${loading ? `${classPrefix}--loading` : ''}
+        ${hairline ? `${classPrefix}--hairline` : ''}`
     }
 
     const getStyle = () => {
@@ -95,7 +96,7 @@ export const Button:FunctionComponent<Partial<ButtonProps>> = ((props) => {
     }
 
     return <div 
-        className={`${btnName} ${className}`}
+        className={`${buttonClassName} ${className}`}
         style={{ ...btnStyle, ...style }}   
         {...rest}
         onClick={(e) => handleClick(e)}

@@ -1,9 +1,9 @@
-
+@import '../../../styles/var.less';
 @class-prefix-button: ~'aunt-icon';
 
 .@{class-prefix-button} {
     &--spin{
-        animation: anut-spin 1.5s infinite linear;
-        -webkit-animation: anut-spin 1.5s infinite linear;
+        animation: anut-spin @animation-duration-slowest infinite linear;
+        -webkit-animation: anut-spin @animation-duration-slowest infinite linear;
     }
 }

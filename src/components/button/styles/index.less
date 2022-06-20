@@ -1,4 +1,4 @@
-
+@import '../../../styles/var.less';
 @class-prefix-button: ~'aunt-button';
 
 .@{class-prefix-button} {
@@ -7,13 +7,14 @@
     --text-color: var(--aunt-button-text-color, var(--aunt-text-color));
     --background-color: var(--aunt-button-background-color, var(--aunt-color-white));
 
-    --border-radius: var(--aunt-button-border-radius, calc(4*var(--aunt-hd)));
-    --border-width: var(--aunt-button-border-width, calc(1*var(--aunt-hd)));
+    --border-radius: var(--aunt-button-border-radius, @border-radius-md);
+    --border-width: var(--aunt-button-border-width, @border-width-base);
     --border-style: var(--aunt-button-border-style, solid);
     --border-color: var(--aunt-button-border-color, var(--aunt-border-color));
     
-    --button-padding: calc(10*var(--aunt-hd)) calc(14*var(--aunt-hd)) ;
-    --button-font-size: calc(14*var(--aunt-hd));
+    --button-padding: @padding-s @padding-m;
+    --button-font-size: @font-size-md;
+    --button-line-height: @line-height-xs;
 
     color: var(--text-color);
     background-color: var(--background-color);
@@ -24,7 +25,7 @@
     padding: var(--button-padding);
     margin: 0;
     font-size: var(--button-font-size);
-    line-height: 1.4;
+    line-height: --button-line-height;
     text-align: center;
     border: var(--border-width) var(--border-style) var(--border-color);
     border-radius: var(--border-radius);
@@ -99,33 +100,34 @@
     }   
 
     &--hairline{
-        --border-width:calc(0.5 * var(--aunt-hd));
+        --border-width: calc(0.5 * var(--aunt-hd));
     }
 
     &--large {
-        width: 100%;
-        --button-padding:calc(14*var(--aunt-hd)) calc(10*var(--aunt-hd));
+        --button-font-size: @font-size-lg;
+        --button-line-height:@line-height-sm;
+        --button-padding: @padding-m @padding-xl;
     }
 
     &--normal {}
     
     &--small {
-        --button-padding:calc(8*var(--aunt-hd)) calc(10*var(--aunt-hd));
-        --button-font-size: calc(12*var(--aunt-hd));
+        --button-padding:@padding-xs @padding-s;
+        --button-font-size: @font-size-sm;
     }
     
     &--mini {
-        --button-padding:calc(4*var(--aunt-hd)) calc(8*var(--aunt-hd));
-        --button-font-size: calc(10*var(--aunt-hd));
+        --button-padding:@padding-base @padding-xs;
+        --button-font-size: @font-size-xs;
     }
 
     &--shape{
         &--default{}
         &--square{
-            --border-radius:calc(0*var(--aunt-hd));
+            --border-radius:0;
         }
         &--round{
-            --border-radius:calc(999*var(--aunt-hd));;
+            --border-radius: @border-radius-max;
         }
     }
     
@@ -136,7 +138,7 @@
 
     &--disabled {
         cursor: not-allowed;
-        opacity: 0.5;
+        opacity: @disabled-opacity;
         &::before {
             display: none;
         }

@@ -1,0 +1,25 @@
+@import '../../../styles/var.less';
+@class-prefix-loading: ~'aunt-loading';
+
+.@{class-prefix-loading} {
+    
+    --font-size: @font-size-md;
+    --padding: @padding-xs;
+    
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    &_text{
+        font-size: var(--font-size);
+        margin-left: var(--padding);
+        vertical-align: middle;
+        color: @text-color;
+    }
+    &--vertical{
+        align-items: center;
+        flex-direction: column;
+        .@{class-prefix-loading}_text{
+            padding-top: var(--padding);
+        }
+    }
+}

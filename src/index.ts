@@ -1,6 +1,10 @@
 import './styles/index.less'
 
 export { default as Button } from './components/button'
+export { default as Loading } from './components/loading'
+
+
+
 
 export { default as AuntIconActivity } from './components/icon/icons/activity'
 export { default as AuntIconAirplay } from './components/icon/icons/airplay';
