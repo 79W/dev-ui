@@ -79,10 +79,38 @@ export default defineConfig({
       },
     ],
     '/components': [
+      // {
+      //   title: '布局组件',
+      //   children: [],
+      // },
       {
         title: '基础组件',
-        children: ['components/button','components/icon','components/loading'],
+        children: ['components/button','components/icon'],
       },
+      // {
+      //   title: '表单组件',
+      //   children: [],
+      // },
+      {
+        title: '反馈组件',
+        children: ['components/loading'],
+      },
+      // {
+      //   title: '展示组件',
+      //   children: [],
+      // },
+      // {
+      //   title: '导航组件',
+      //   children: [],
+      // },
+      // {
+      //   title: '其他组件',
+      //   children: [],
+      // },
+      // {
+      //   title: '业务组件',
+      //   children: [],
+      // },
     ],
     '/en/components': [
       {
