@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from 'kf-ui'
+import { Button, AuntIconAlertCircle } from 'kf-ui'
 import './index.less'
 
 function Demo (){
@@ -7,9 +7,9 @@ function Demo (){
         <p className="demo-button-title" >按钮类型</p>
         <div className="demo-button-content">
             <Button>默认按钮</Button>
-            <Button type="primary">主要按钮</Button>
-            <Button type="success">成功按钮</Button>
-            <Button type="warning">警告按钮</Button>
+            <Button type="primary" >主要按钮</Button>
+            <Button type="success" >成功按钮</Button>
+            <Button type="warning" >警告按钮</Button>
             <Button type="danger">危险按钮</Button>
         </div>
         <p className="demo-button-title">朴素按钮</p>
@@ -26,12 +26,23 @@ function Demo (){
             <Button plain type="success" hairline>成功按钮</Button>
             <Button plain type="danger" hairline>危险按钮</Button>
         </div>
+        <p className="demo-button-title">图标按钮</p>
+        <div className="demo-button-content">
+            <Button type="primary" icon={<AuntIconAlertCircle size={18} />}>图标按钮</Button>
+            <Button type="success" icon={<AuntIconAlertCircle size={18} />} iconPosition="right">图标按钮</Button>
+        </div>
         <p className="demo-button-title">禁用状态</p>
         <div className="demo-button-content">
             <Button disabled type="primary">禁用按钮</Button>
             <Button plain disabled type="success">禁用按钮</Button>
             <Button plain disabled type="warning">禁用按钮</Button>
         </div>
+        <p className="demo-button-title">加载状态</p>
+        <div className="demo-button-content">
+            <Button type="primary" loading>加载状态</Button>
+            <Button loading type="success" loadingText="加载中..." >加载状态</Button>
+        </div>
+        
         <p className="demo-button-title">按钮形状</p>
         <div className="demo-button-content">
             <Button shape="default" type="primary">圆角按钮</Button>

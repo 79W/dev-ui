@@ -2,6 +2,7 @@ export type LoadingType = 'oval' | 'rings' | 'ball' | 'bars' | 'circles' | 'puff
 
 // 定义接受到的参数 类型
 export interface LoadingProps {
+    className?: string;
     // loading 颜色
     color?: string;
     // 选择图形

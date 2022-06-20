@@ -42,7 +42,8 @@ export const Loading:FunctionComponent<Partial<LoadingProps>> = ((props) => {
         size, 
         textColor, 
         children, 
-        textSize 
+        textSize,
+        className
     } = {
         ...defaultProps,
         ...props
@@ -91,7 +92,7 @@ export const Loading:FunctionComponent<Partial<LoadingProps>> = ((props) => {
     }
 
     return (
-        <div className={`${classes()}`}>
+        <div className={`${classes()} ${className}`}>
             {cloneElement(Icon()[type] as React.ReactElement, iconAttrs) }
             {renderText()}
         </div>

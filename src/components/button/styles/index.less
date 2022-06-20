@@ -1,4 +1,5 @@
 @import '../../../styles/var.less';
+@import '../../../styles/mixin.less';
 @class-prefix-button: ~'aunt-button';
 
 .@{class-prefix-button} {
@@ -12,7 +13,7 @@
     --border-style: var(--aunt-button-border-style, solid);
     --border-color: var(--aunt-button-border-color, var(--aunt-border-color));
     
-    --button-padding: @padding-s @padding-m;
+    --button-padding: @padding-m @padding-lg;
     --button-font-size: @font-size-md;
     --button-line-height: @line-height-xs;
 
@@ -25,7 +26,7 @@
     padding: var(--button-padding);
     margin: 0;
     font-size: var(--button-font-size);
-    line-height: --button-line-height;
+    line-height: var(--button-line-height);
     text-align: center;
     border: var(--border-width) var(--border-style) var(--border-color);
     border-radius: var(--border-radius);
@@ -56,7 +57,26 @@
     &:active::before {
         opacity: 0.08;
     }
-    
+
+    &--icon{
+        .inline-flex-center();
+        --button-padding: @padding-m @padding-m ;
+        &--left{
+            margin-right: @padding-base;
+        }
+        &--right{
+            margin-left: @padding-base;
+        }
+    }
+    &--loading{
+        .inline-flex-center();
+        cursor: not-allowed;
+        --button-padding: @padding-m @padding-m ;
+        &:active::before {
+            opacity:0;
+        }
+    }
+
     &--default{}
 
     &--primary{
@@ -106,18 +126,18 @@
     &--large {
         --button-font-size: @font-size-lg;
         --button-line-height:@line-height-sm;
-        --button-padding: @padding-m @padding-xl;
+        --button-padding: @padding-md @padding-xl;
     }
 
     &--normal {}
     
     &--small {
-        --button-padding:@padding-xs @padding-s;
+        --button-padding:@padding-s @padding-m;
         --button-font-size: @font-size-sm;
     }
     
     &--mini {
-        --button-padding:@padding-base @padding-xs;
+        --button-padding:@padding-xs @padding-s;
         --button-font-size: @font-size-xs;
     }
 

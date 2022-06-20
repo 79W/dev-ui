@@ -39,12 +39,29 @@ export default () => <Button>默认按钮</Button>;
 <Button plain hairline type="success">细边按钮</Button>
 ```
 
+### 图标按钮
+通过 icon 属性设置按钮图标，支持 Icon 组件里的所有图标。
+
+```tsx
+<Button type="primary" icon={<AuntIconAlertCircle size={18} />}>图标按钮</Button>
+<Button type="success" icon={<AuntIconAlertCircle size={18} />} iconPosition="right">图标按钮</Button>
+```
+
 ### 禁用状态
 通过 disabled 属性来禁用按钮，禁用状态下按钮不可点击。
 
 ```tsx
 <Button disabled type="primary">禁用按钮</Button>
 <Button plain disabled type="success">禁用按钮</Button>
+```
+
+
+### 加载状态
+通过 disabled 属性来禁用按钮，禁用状态下按钮不可点击。
+
+```tsx
+<Button type="primary" loading>加载状态</Button>
+<Button loading type="success" loadingText="加载中..." >加载状态</Button>
 ```
 
 ### 按钮形状

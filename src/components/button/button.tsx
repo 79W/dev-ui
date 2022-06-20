@@ -1,5 +1,6 @@
 import React, { CSSProperties, FunctionComponent, useEffect, useState } from 'react'
 import {ButtonProps,} from './types'
+import Loading from '../loading';
 
 const classPrefix = 'aunt-button'
 
@@ -13,11 +14,11 @@ const defaultProps: ButtonProps = {
     disabled: false,
     type: 'default',
     size: 'normal',
+    loadingText:'',
     block: false,
-    icon: '',
+    iconPosition:'left',
     style: {},
-    children: undefined,
-    onClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {},
+    children: undefined
 }
 
 export const Button:FunctionComponent<Partial<ButtonProps>> = ((props) => {
@@ -31,11 +32,12 @@ export const Button:FunctionComponent<Partial<ButtonProps>> = ((props) => {
         type,
         size,
         block,
-        icon,
         children,
-        onClick,
+        iconPosition,
+        icon,
         className,
         style,
+        loadingText,
         ...rest
     } = {
         ...defaultProps,
@@ -59,20 +61,20 @@ export const Button:FunctionComponent<Partial<ButtonProps>> = ((props) => {
         type,
         size,
         block,
-        icon,
-        children,
-        onClick,
+        children
     ])
 
     const classes = () => {
-        return `${classPrefix} ${type ? `${classPrefix}--${type}` : ''}
+        return `${classPrefix} 
+        ${type ? `${classPrefix}--${type}` : ''}
         ${size ? `${classPrefix}--${size}` : ''}
         ${shape ? `${classPrefix}--shape--${shape}` : ''}
         ${plain ? `${classPrefix}--plain` : ''}
         ${block ? `${classPrefix}--block` : ''}
         ${disabled ? `${classPrefix}--disabled` : ''}
-        ${loading ? `${classPrefix}--loading` : ''}
-        ${hairline ? `${classPrefix}--hairline` : ''}`
+        ${hairline ? `${classPrefix}--hairline` : ''}
+        ${icon ? `${classPrefix}--icon` : ''}
+        ${loading ? `${classPrefix}--loading` : ''}`
     }
 
     const getStyle = () => {
@@ -89,19 +91,69 @@ export const Button:FunctionComponent<Partial<ButtonProps>> = ((props) => {
         return style
     }
 
-    const handleClick = (e: any) => {
-        if (!loading && !disabled && onClick) {
-          onClick(e)
+    const handleClick = (event: any) => {
+        if (!loading && !disabled && props.onClick) {
+            props.onClick(event);
         }
     }
+
+    const renderText = () => {
+        let text;
+        if (loading) {
+          text = props.loadingText;
+        } else {
+          text = props.children || props.text;
+        }
+    
+        if (text) {
+          return (
+            <span className={`${classPrefix}--text`}>
+              {text}
+            </span>
+          );
+        }
+        return null;
+    };
+    
+    const renderLoadingIcon = (position:string) => {
+        if (loading) {
+            const { loadingSize = '20px', loadingType } = props;
+            return <Loading
+                size={loadingSize}
+                type={loadingType}
+                color={type === 'default' ? undefined : ''}
+                className={ `
+                    ${classPrefix}--icon--${position}
+                `}
+            />
+        }
+        return null;
+    };
+    const renderIcon = (position:string) => {
+        if (props.loading) {
+          return renderLoadingIcon(position);
+        }
+    
+        if (props.icon) {
+          return React.cloneElement(props.icon, {
+            className: `
+            ${classPrefix}--icon--${position}
+            `,
+          });
+        }
+    
+        return null;
+      };
 
     return <div 
         className={`${buttonClassName} ${className}`}
         style={{ ...btnStyle, ...style }}   
         {...rest}
-        onClick={(e) => handleClick(e)}
-    >
-        {children}
+        onClick={handleClick}
+    >   
+        {iconPosition === 'left' && renderIcon('left')}
+        {renderText()}
+        {iconPosition === 'right' && renderIcon('right')}
     </div>
 })
 
