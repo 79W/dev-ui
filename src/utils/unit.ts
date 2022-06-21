@@ -10,3 +10,11 @@ export function addUnit(value?: string | number): string | undefined {
     value = String(value);
     return isNumeric(value) ? `${value}px` : value;
 }
+
+
+export function kebabCase(str: string): string {
+  return str
+    .replace(/([A-Z])/g, '-$1')
+    .toLowerCase()
+    .replace(/^-/, '');
+}

@@ -118,14 +118,24 @@ export default () => <Button>默认按钮</Button>;
 F12打开控制台（检查）选择 `Elements` 的样式即可看到 root 全局样式变量 
 | 属性名 | 说明 | 默认值 |
 | ---- | ---- | ---- |
-|--text-color|文字颜色| `--aunt-text-color` |
-|--background-color|背景颜色| `--aunt-color-white` |
-|--border-radius|圆角大小| `--aunt-border-radius-md` |
-|--border-width|边框大小| `--aunt-border-width-base` |
-|--border-color|边框颜色| `--aunt-border-color` |
-|--border-style|边框样式| `solid` |
-|--button-padding|按钮内边距| `--aunt-padding-m  --aunt-padding-lg` |
-|--button-font-size|文字大小| `--aunt-padding-md` |
-|--button-line-height|按钮行高| `--aunt-line-height-xs` |
+|--aunt-button-background-default-color|背景颜色| `var(--aunt-color-white);` |
+|--aunt-button-background-primary-color|背景颜色| `var(--aunt-primary-color);` |
+|--aunt-button-background-success-color|背景颜色| `var(--aunt-success-color);` |
+|--aunt-button-background-warning-color|背景颜色| `var(--aunt-warning-color);` |
+|--aunt-button-background-danger-color|背景颜色| `var(--aunt-danger-color);` |
+|--aunt-button-border-radius|圆角大小| `var(--aunt-border-radius-md);` |
+|--aunt-button-border-width|边框大小| `var(--aunt-border-width-base);` |
+|--aunt-button-border-style|边框样式| `solid` |
+|--aunt-button-border-default-color|边框颜色| `var(--aunt-border-color);` |
+|--aunt-button-border-primary-color|边框颜色| `var(--aunt-primary-color);` |
+|--aunt-button-border-success-color|边框颜色| `var(--aunt-success-color);` |
+|--aunt-button-border-warning-color|边框颜色| `var(--aunt-warning-color);` |
+|--aunt-button-border-danger-color|边框颜色| `var(--aunt-danger-color);` |
+|--aunt-button-text-default-color|文字颜色| `var(--aunt-text-color);` |
+|--aunt-button-text-primary-color|文字颜色| `var(--aunt-primary-color);` |
+|--aunt-button-text-success-color|文字颜色| `var(--aunt-success-color);` |
+|--aunt-button-text-danger-color|文字颜色| `var(--aunt-warning-color);` |
+|--aunt-button-text-warning-color|文字颜色| `var(--aunt-danger-color);` |
+
 
 <code hidden="hidden" src="./demos/demo.tsx"></code>

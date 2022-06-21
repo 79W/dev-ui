@@ -2,6 +2,7 @@
     &-loading{
         padding: 10px;
         min-height: 100vh;
+        background-color: #fff;
         &-all{
             .demo-loading-card{
                 margin:20px 20px 0 20px;
@@ -29,5 +30,8 @@
             cursor:pointer;
             padding: 10px;
         }
+    }
+    [data-prefers-color=dark] &-loading{
+        background-color: #141414;
     }
 }

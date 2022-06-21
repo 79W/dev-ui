@@ -103,10 +103,10 @@ export default defineConfig({
       //   title: '导航组件',
       //   children: [],
       // },
-      // {
-      //   title: '其他组件',
-      //   children: [],
-      // },
+      {
+        title: '其他组件',
+        children: ['components/config-provider'],
+      },
       // {
       //   title: '业务组件',
       //   children: [],

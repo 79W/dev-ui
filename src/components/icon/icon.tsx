@@ -1,5 +1,6 @@
-import React, { forwardRef, cloneElement } from 'react'
+import React, { forwardRef, cloneElement, useContext } from 'react'
 import { IconProps } from './types'
+import ConfigProviderContext from '../config-provider/config-provider-context'
 
 const Icon = forwardRef<SVGSVGElement,IconProps>((props,ref) => {
     const {
@@ -15,6 +16,10 @@ const Icon = forwardRef<SVGSVGElement,IconProps>((props,ref) => {
         children,
         ...restProps
     } = props;
+
+    const { prefix } = useContext(ConfigProviderContext);
+    
+    const classPrefix = `${prefix}-icon`
     
     function kebabCase(str: string): string {
         return str
@@ -48,8 +53,8 @@ const Icon = forwardRef<SVGSVGElement,IconProps>((props,ref) => {
         tabIndex: iconTabIndex,
         onClick,
         className: [
-          kebabCaseName ? `aunt-icon-${kebabCaseName}` : '',
-          spin ? 'aunt-icon--spin' : '',
+          kebabCaseName ? `${classPrefix}-${kebabCaseName}` : '',
+          spin ? `${classPrefix}--spin` : '',
           className,
         ].join(' ').trim(),
         width: size ? size : "24",

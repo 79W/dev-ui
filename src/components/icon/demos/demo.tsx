@@ -44,6 +44,21 @@ function Demo (){
                     <AuntIconFileMinus spin />
             </div>
         </div>
+        <p className="demo-icon-title">图标旋转角度</p>
+        <div className="demo-icon-content">
+            <div className="demo-icon-card" style={{
+                width:60,
+                height:60
+            }} >
+                    <AuntIconLoader rotate={20} />
+            </div>
+            <div className="demo-icon-card" style={{
+                width:60,
+                height:60
+            }} >
+                    <AuntIconFileMinus rotate={60} />
+            </div>
+        </div>
     </div>
 }
 

@@ -1,4 +1,5 @@
-import React, { cloneElement, FunctionComponent, useEffect } from 'react'
+import React, { cloneElement, FunctionComponent, useEffect, useContext } from 'react'
+import ConfigProviderContext from '../config-provider/config-provider-context'
 import BallTriangleIcon from './svg-loaders/ball-triangle'
 import BarsIcon from './svg-loaders/bars'
 import CirclesIcon from './svg-loaders/circles'
@@ -10,9 +11,7 @@ import ThreeDotsIcon from './svg-loaders/three-dots'
 import GapCircleIcon from './svg-loaders/gap-circle'
 
 import { addUnit } from '../../utils'
-import {LoadingProps} from './types'
-
-const classPrefix = `aunt-loading`
+import { LoadingProps } from './types'
 
 const defaultProps: LoadingProps = {
     type: 'gap',
@@ -50,6 +49,9 @@ export const Loading:FunctionComponent<Partial<LoadingProps>> = ((props) => {
     };
 
 
+    const { prefix } = useContext(ConfigProviderContext);
+    
+    const classPrefix = `${prefix}-loading`
 
     useEffect(()=>{
     },[

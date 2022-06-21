@@ -1,8 +1,7 @@
-import React, { CSSProperties, FunctionComponent, useEffect, useState } from 'react'
+import React, { CSSProperties, FunctionComponent, useEffect, useState, useContext} from 'react'
 import {ButtonProps,} from './types'
 import Loading from '../loading';
-
-const classPrefix = 'aunt-button'
+import ConfigProviderContext from '../config-provider/config-provider-context'
 
 const defaultProps: ButtonProps = {
     className: '',
@@ -43,6 +42,10 @@ export const Button:FunctionComponent<Partial<ButtonProps>> = ((props) => {
         ...defaultProps,
         ...props
     }
+
+    const { prefix } = useContext(ConfigProviderContext);
+    
+    const classPrefix = `${prefix}-button`
 
     const [buttonClassName, setButtonClassName] = useState('')
     const [btnStyle, setBtnStyle] = useState({})
