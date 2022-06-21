@@ -1,4 +1,3 @@
-@import '../../../styles/var.less';
 @import '../../../styles/mixin.less';
 @class-prefix-button: ~'aunt-button';
 
@@ -8,14 +7,14 @@
     --text-color: var(--aunt-button-text-color, var(--aunt-text-color));
     --background-color: var(--aunt-button-background-color, var(--aunt-color-white));
 
-    --border-radius: var(--aunt-button-border-radius, @border-radius-md);
-    --border-width: var(--aunt-button-border-width, @border-width-base);
+    --border-radius: var(--aunt-button-border-radius, var(--aunt-border-radius-md));
+    --border-width: var(--aunt-button-border-width, var(--aunt-border-width-base));
     --border-style: var(--aunt-button-border-style, solid);
     --border-color: var(--aunt-button-border-color, var(--aunt-border-color));
     
-    --button-padding: @padding-m @padding-lg;
-    --button-font-size: @font-size-md;
-    --button-line-height: @line-height-xs;
+    --button-padding: var(--aunt-padding-m) var(--aunt-padding-lg);
+    --button-font-size: var(--aunt-padding-md);
+    --button-line-height: var(--aunt-line-height-xs);
 
     color: var(--text-color);
     background-color: var(--background-color);
@@ -60,18 +59,18 @@
 
     &--icon{
         .inline-flex-center();
-        --button-padding: @padding-m @padding-m ;
+        --button-padding:  var(--aunt-padding-m)  var(--aunt-padding-m) ;
         &--left{
-            margin-right: @padding-base;
+            margin-right: var(--aunt-padding-base);
         }
         &--right{
-            margin-left: @padding-base;
+            margin-left: var(--aunt-padding-base);
         }
     }
     &--loading{
         .inline-flex-center();
         cursor: not-allowed;
-        --button-padding: @padding-m @padding-m ;
+        --button-padding:  var(--aunt-padding-m)  var(--aunt-padding-m) ;
         &:active::before {
             opacity:0;
         }
@@ -124,21 +123,21 @@
     }
 
     &--large {
-        --button-font-size: @font-size-lg;
-        --button-line-height:@line-height-sm;
-        --button-padding: @padding-md @padding-xl;
+        --button-font-size: var(--aunt-font-size-lg);
+        --button-line-height: var(--aunt-line-height-sm);
+        --button-padding:  var(--aunt-padding-md) var(--aunt-padding-xl);
     }
 
     &--normal {}
     
     &--small {
-        --button-padding:@padding-s @padding-m;
-        --button-font-size: @font-size-sm;
+        --button-padding:var(--aunt-padding-s)  var(--aunt-padding-m);
+        --button-font-size: var(--aunt-font-size-sm);
     }
     
     &--mini {
-        --button-padding:@padding-xs @padding-s;
-        --button-font-size: @font-size-xs;
+        --button-padding:  var(--aunt-padding-xs) var(--aunt-padding-s);
+        --button-font-size: var(--aunt-font-size-xs);
     }
 
     &--shape{
@@ -147,7 +146,7 @@
             --border-radius:0;
         }
         &--round{
-            --border-radius: @border-radius-max;
+            --border-radius: var(--aunt-border-radius-max);
         }
     }
     
@@ -158,7 +157,7 @@
 
     &--disabled {
         cursor: not-allowed;
-        opacity: @disabled-opacity;
+        opacity: var(--aunt-disabled-opacity);
         &::before {
             display: none;
         }

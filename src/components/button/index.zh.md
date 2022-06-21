@@ -114,5 +114,18 @@ export default () => <Button>默认按钮</Button>;
 | ---- | ---- | ---- | ------ |
 |onClick|点击图标时触发| `-` | `(event:React.MouseEvent<HTMLButtonElement, MouseEvent>) => void ｜ Promise<void> ` |
 
+## 样式变量
+F12打开控制台（检查）选择 `Elements` 的样式即可看到 root 全局样式变量 
+| 属性名 | 说明 | 默认值 |
+| ---- | ---- | ---- |
+|--text-color|文字颜色| `--aunt-text-color` |
+|--background-color|背景颜色| `--aunt-color-white` |
+|--border-radius|圆角大小| `--aunt-border-radius-md` |
+|--border-width|边框大小| `--aunt-border-width-base` |
+|--border-color|边框颜色| `--aunt-border-color` |
+|--border-style|边框样式| `solid` |
+|--button-padding|按钮内边距| `--aunt-padding-m  --aunt-padding-lg` |
+|--button-font-size|文字大小| `--aunt-padding-md` |
+|--button-line-height|按钮行高| `--aunt-line-height-xs` |
 
 <code hidden="hidden" src="./demos/demo.tsx"></code>
