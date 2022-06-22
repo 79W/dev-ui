@@ -79,10 +79,10 @@ export default defineConfig({
       },
     ],
     '/components': [
-      // {
-      //   title: '布局组件',
-      //   children: [],
-      // },
+      {
+        title: '布局组件',
+        children: ['components/flex',],
+      },
       {
         title: '基础组件',
         children: ['components/button','components/icon'],
