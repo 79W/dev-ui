@@ -1,7 +1,8 @@
-import React, { CSSProperties, FunctionComponent, useEffect, useState, useContext} from 'react'
+import React, { CSSProperties, FunctionComponent, useContext, useMemo} from 'react'
 import {ButtonProps,} from './types'
 import Loading from '../loading';
 import ConfigProviderContext from '../config-provider/config-provider-context'
+import { joinTrim } from '../../utils'
 
 const defaultProps: ButtonProps = {
     className: '',
@@ -47,52 +48,36 @@ export const Button:FunctionComponent<Partial<ButtonProps>> = ((props) => {
     
     const classPrefix = `${prefix}-button`
 
-    const [buttonClassName, setButtonClassName] = useState('')
-    const [btnStyle, setBtnStyle] = useState({})
-    
-    useEffect(() => {
-        setButtonClassName(classes())
-        setBtnStyle(getStyle())
-    }, [
-        className,
-        color,
-        shape,
-        plain,
-        loading,
-        disabled,
-        style,
-        type,
-        size,
-        block,
-        children
-    ])
 
-    const classes = () => {
-        return `${classPrefix} 
-        ${type ? `${classPrefix}--${type}` : ''}
-        ${size ? `${classPrefix}--${size}` : ''}
-        ${shape ? `${classPrefix}--shape--${shape}` : ''}
-        ${plain ? `${classPrefix}--plain` : ''}
-        ${block ? `${classPrefix}--block` : ''}
-        ${disabled ? `${classPrefix}--disabled` : ''}
-        ${hairline ? `${classPrefix}--hairline` : ''}
-        ${icon ? `${classPrefix}--icon` : ''}
-        ${loading ? `${classPrefix}--loading` : ''}`
-    }
+    const varClasses = useMemo(()=>{
+      return joinTrim([
+        classPrefix,
+        type ? `${classPrefix}--${type}` : '',
+        size ? `${classPrefix}--${size}` : '',
+        shape ? `${classPrefix}--shape--${shape}` : '',
+        plain ? `${classPrefix}--plain` : '',
+        block ? `${classPrefix}--block` : '',
+        disabled ? `${classPrefix}--disabled` : '',
+        hairline ? `${classPrefix}--hairline` : '',
+        icon ? `${classPrefix}--icon` : '',
+        loading ? `${classPrefix}--loading` : '',
+        `${className}`
+      ])
+    },[])
 
-    const getStyle = () => {
-        const style: CSSProperties = {}
+    const varStyle = useMemo(()=>{
+      const styles: CSSProperties = {}
         if (color) {
-            style.color = plain ? color : '#fff';
-            style.background = !plain ? color : '#fff';
+          styles.color = plain ? color : '#fff';
+          styles.background = !plain ? color : '#fff';
           if (color?.includes('gradient')) {
-            style.borderWidth = 0
+            styles.borderWidth = 0
           }else{
-            style.borderColor = color
+            styles.borderColor = color
           }
         }
-        return style
-    }
+        return {...style, ...styles}
+    },[])
 
     const handleClick = (event: any) => {
         if (!loading && !disabled && props.onClick) {
@@ -149,8 +134,8 @@ export const Button:FunctionComponent<Partial<ButtonProps>> = ((props) => {
       };
 
     return <div 
-        className={`${buttonClassName} ${className}`}
-        style={{ ...btnStyle, ...style }}   
+        className={varClasses}
+        style={{ ...varStyle }}   
         {...rest}
         onClick={handleClick}
     >   

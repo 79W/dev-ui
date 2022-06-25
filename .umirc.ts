@@ -81,7 +81,7 @@ export default defineConfig({
     '/components': [
       {
         title: '布局组件',
-        children: ['components/flex',],
+        children: ['components/flex','components/grid',],
       },
       {
         title: '基础组件',

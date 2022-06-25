@@ -14,6 +14,6 @@ export const INITIAL_STATE = {
     locale,
 } as ConfigProviderContextState;
 
-const ConfigProvider: Context<ConfigProviderContextState> = createContext(INITIAL_STATE);
+const ConfigProviderContext: Context<ConfigProviderContextState> = createContext(INITIAL_STATE);
 
-export default ConfigProvider;
+export default ConfigProviderContext;

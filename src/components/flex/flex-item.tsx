@@ -1,7 +1,8 @@
-import React, { CSSProperties, FunctionComponent, useContext } from 'react'
+import React, { CSSProperties, FunctionComponent, useContext, useMemo } from 'react'
 import ConfigProviderContext from '../config-provider/config-provider-context';
 import FlexContext from './flex-context';
 import { FlexItemProps, FlexType } from './types'
+import { joinTrim } from '../../utils' 
 
 const defaultProps: FlexItemProps = {
     className:''
@@ -35,13 +36,13 @@ const FlexItem:FunctionComponent<Partial<FlexItemProps>> = ((props) => {
         }
     }
 
-    const classes = ()=>{
-        return `
-            ${className}
-            ${classPrefix}
-            ${classPrefix}--${span}
-        `
-    }
+    const varClasses = useMemo(()=>{
+        return joinTrim([
+            classPrefix,
+            `${classPrefix}--${span}`,
+            `${className}`
+        ])
+    },[span])
 
 
     const parseFlex = (_flex: FlexType): string => {
@@ -70,7 +71,7 @@ const FlexItem:FunctionComponent<Partial<FlexItemProps>> = ((props) => {
                 if (flex) {
                     mergedStyle.flex = parseFlex(flex);
                 }
-                return <div {...rest} style={mergedStyle} className={classes()}>
+                return <div {...rest} style={mergedStyle} className={varClasses}>
                     {children}
                 </div>
             }}

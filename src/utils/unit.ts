@@ -17,3 +17,8 @@ export function kebabCase(str: string): string {
     .toLowerCase()
     .replace(/^-/, '');
 }
+
+
+export function joinTrim(arr: Array<string | number>): string{
+  return arr.join(' ').trim();
+}

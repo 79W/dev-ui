@@ -1,0 +1,32 @@
+.demo{
+    &-grid{
+        margin-bottom: 50px;
+        background-color: #fff;
+        &-title{
+            font-size: 20px;
+            color: '#333';
+            margin: 0 0 0 0;
+            display: inline-block;
+            padding: 10px;
+        }
+        &-content{
+            .aunt-griditem{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 18px;
+                padding: 6px 0;
+                color: #fff;
+            }
+            .aunt-griditem:nth-child(odd) {
+                background-color: #3f45ff;
+            }
+            .aunt-griditem:nth-child(even) {
+                background-color: #686dff;
+            }
+        }
+    }
+    [data-prefers-color=dark] &-grid{
+        background-color: #141414;
+    }
+}

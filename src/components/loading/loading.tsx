@@ -1,4 +1,4 @@
-import React, { cloneElement, FunctionComponent, useEffect, useContext } from 'react'
+import React, { cloneElement, FunctionComponent, useContext, useMemo } from 'react'
 import ConfigProviderContext from '../config-provider/config-provider-context'
 import BallTriangleIcon from './svg-loaders/ball-triangle'
 import BarsIcon from './svg-loaders/bars'
@@ -10,7 +10,7 @@ import SpinningIcon from './svg-loaders/spinning-circles'
 import ThreeDotsIcon from './svg-loaders/three-dots'
 import GapCircleIcon from './svg-loaders/gap-circle'
 
-import { addUnit } from '../../utils'
+import { addUnit,joinTrim } from '../../utils'
 import { LoadingProps } from './types'
 
 const defaultProps: LoadingProps = {
@@ -48,20 +48,9 @@ export const Loading:FunctionComponent<Partial<LoadingProps>> = ((props) => {
         ...props
     };
 
-
     const { prefix } = useContext(ConfigProviderContext);
     
     const classPrefix = `${prefix}-loading`
-
-    useEffect(()=>{
-    },[
-        vertical,
-        type,
-        color,
-        size,
-        textSize,
-        textColor
-    ])
 
     const renderText = () => {
         if (children) {
@@ -87,14 +76,16 @@ export const Loading:FunctionComponent<Partial<LoadingProps>> = ((props) => {
         fill: color ? color : "currentColor",
     }
 
-    const classes = ()=>{
-        return `${classPrefix}
-            ${vertical ? `${classPrefix}--vertical` : ''}
-        `
-    }
+    const varClasses = useMemo(()=>{
+        return joinTrim([
+            classPrefix,
+            vertical ? `${classPrefix}--vertical` : '',
+            `${className}`
+        ])
+    },[vertical])
 
     return (
-        <div className={`${classes()} ${className}`}>
+        <div className={varClasses}>
             {cloneElement(Icon()[type] as React.ReactElement, iconAttrs) }
             {renderText()}
         </div>

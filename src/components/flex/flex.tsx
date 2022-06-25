@@ -1,7 +1,8 @@
-import React, { FunctionComponent, useEffect, useState, useContext,useMemo } from 'react'
+import React, { FunctionComponent, CSSProperties, useContext, useMemo } from 'react'
 import ConfigProviderContext from '../config-provider/config-provider-context';
 import FlexContext from './flex-context';
 import { FlexProps } from './types'
+import { joinTrim } from '../../utils'
 
 const defaultProps: FlexProps = {
     direction: 'row', 
@@ -21,34 +22,26 @@ const Flex:FunctionComponent<Partial<FlexProps>> = ((props) => {
         ...props
     };
 
-    const [flexClassName, setFlexClassName] = useState('')
-    const [flexStyle, setFlexStyle] = useState({})
-
     const { prefix } = useContext(ConfigProviderContext);
     const classPrefix = `${prefix}-flex`
     
-    useEffect(()=>{
-        setFlexClassName(classes())
-        setFlexStyle(getStyle())
-    },[direction,wrap,justify,align,className,gutter])
+    const varClasses = useMemo(()=>{
+        return joinTrim([
+            classPrefix,
+            `${classPrefix}--direction-${direction}`,
+            `${classPrefix}--wrap-${wrap}`,
+            `${classPrefix}--justify-${justify}`,
+            `${classPrefix}--align-${align}`,
+            `${className}`,
+        ])
+    },[direction,wrap,justify,align,className])
 
-    const classes = ()=>{
-        return `
-            ${className}
-            ${classPrefix}
-            ${classPrefix}--direction-${direction}
-            ${classPrefix}--wrap-${wrap}
-            ${classPrefix}--justify-${justify}
-            ${classPrefix}--align-${align}
-        `
-    }
-    
     const getGutter: [number, number] = useMemo(
         () => (Array.isArray(gutter) ? gutter : [gutter, 0]) as [number, number],
         [gutter],
     );
 
-    const getStyle = () => {
+    const varStyle = useMemo<CSSProperties | undefined>(()=>{
         return {
             ...(getGutter[0]! > 0
             ? {
@@ -64,12 +57,11 @@ const Flex:FunctionComponent<Partial<FlexProps>> = ((props) => {
             : {}),
             ...style,
         }
-    }
-
+    },[gutter])
 
     return (
         <FlexContext.Provider value={{ gutter: getGutter }}>
-            <div className={`${flexClassName}`} style={flexStyle} {...rest}>   
+            <div className={varClasses} style={{...varStyle}} {...rest}>   
                 {children}
             </div>
         </FlexContext.Provider>

@@ -1,6 +1,7 @@
 import React, { forwardRef, cloneElement, useContext } from 'react'
 import { IconProps } from './types'
 import ConfigProviderContext from '../config-provider/config-provider-context'
+import {joinTrim} from '../../utils'
 
 const Icon = forwardRef<SVGSVGElement,IconProps>((props,ref) => {
     const {
@@ -28,11 +29,11 @@ const Icon = forwardRef<SVGSVGElement,IconProps>((props,ref) => {
           .replace(/^-/, '');
     }
 
-    const svgStyle = {} as React.CSSProperties;
+    const varStyle = {} as React.CSSProperties;
 
     if (rotate) {
-      svgStyle.msTransform = `rotate(${rotate}deg)`;
-      svgStyle.transform = `rotate(${rotate}deg)`;
+      varStyle.msTransform = `rotate(${rotate}deg)`;
+      varStyle.transform = `rotate(${rotate}deg)`;
     }
     
     const kebabCaseName = name ? kebabCase(name) : undefined;
@@ -52,15 +53,15 @@ const Icon = forwardRef<SVGSVGElement,IconProps>((props,ref) => {
         ref,
         tabIndex: iconTabIndex,
         onClick,
-        className: [
+        className: joinTrim([
           kebabCaseName ? `${classPrefix}-${kebabCaseName}` : '',
           spin ? `${classPrefix}--spin` : '',
-          className,
-        ].join(' ').trim(),
+          `${className}`,
+        ]),
         width: size ? size : "24",
         height: size ? size : "24",
         stroke: color ? color : "currentColor",
-        style: { ...style, ...svgStyle },
+        style: { ...style, ...varStyle },
         ...restProps,
     };
     return cloneElement(children as React.ReactElement, attrs)

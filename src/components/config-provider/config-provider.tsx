@@ -45,8 +45,8 @@ export const ConfigProvider:FunctionComponent<ConfigProviderProps> = ((props) =>
     }, [style, theme]);
     
     return (
-        <ConfigProviderContext.Provider value={{ ...INITIAL_STATE, ...props }}>
-            <TagElement className={className} style={varStyle}>
+        <ConfigProviderContext.Provider value={{ ...INITIAL_STATE, ...props }} >
+            <TagElement className={className} style={varStyle} {...rest}>
                 {children}
             </TagElement>
         </ConfigProviderContext.Provider>
