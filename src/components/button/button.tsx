@@ -65,7 +65,7 @@ export const Button:FunctionComponent<Partial<ButtonProps>> = ((props) => {
       ])
     },[])
 
-    const varStyle = useMemo(()=>{
+    const varStyles = useMemo(()=>{
       const styles: CSSProperties = {}
         if (color) {
           styles.color = plain ? color : '#fff';
@@ -95,9 +95,9 @@ export const Button:FunctionComponent<Partial<ButtonProps>> = ((props) => {
     
         if (text) {
           return (
-            <span className={`${classPrefix}--text`}>
+            <div className={`${classPrefix}--text`}>
               {text}
-            </span>
+            </div>
           );
         }
         return null;
@@ -135,7 +135,7 @@ export const Button:FunctionComponent<Partial<ButtonProps>> = ((props) => {
 
     return <div 
         className={varClasses}
-        style={{ ...varStyle }}   
+        style={{ ...varStyles }}   
         {...rest}
         onClick={handleClick}
     >   

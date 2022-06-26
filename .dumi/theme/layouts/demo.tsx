@@ -74,7 +74,12 @@ const MobileDemoLayout: React.FC<IRouteComponentProps> = ({ children }) => {
     handler()
     window.addEventListener('resize', handler)
 
+    document.documentElement.setAttribute('style', 'font-size: 0px;')
+    document.documentElement.removeAttribute('style')
+
     return () => window.removeEventListener('resize', handler)
+
+
   }, [rules])
 
   return (

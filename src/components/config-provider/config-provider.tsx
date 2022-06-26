@@ -3,7 +3,7 @@ import { kebabCase } from '../../utils'
 import ConfigProviderContext, { INITIAL_STATE } from './config-provider-context';
 import { ConfigProviderProps } from './types'
 
-const classPrefix = 'aunt-config-rovider'
+
 
 const defaultProps: ConfigProviderProps = {
     tag : 'div',
@@ -34,19 +34,21 @@ export const ConfigProvider:FunctionComponent<ConfigProviderProps> = ((props) =>
         ...props,
     }
 
+    const classPrefix = `${INITIAL_STATE.prefix}-config-rovider`
+
     const TagElement = tag as React.ElementType;
 
 
-    const varStyle = useMemo<CSSProperties | undefined>(() => {
+    const varStyles = useMemo<CSSProperties | undefined>(() => {
         if (theme) {
-          return { ...style, ...mapThemeVarsToCSSVars(theme, 'aunt') };
+          return { ...style, ...mapThemeVarsToCSSVars(theme, INITIAL_STATE.prefix) };
         }
         return style;
     }, [style, theme]);
     
     return (
         <ConfigProviderContext.Provider value={{ ...INITIAL_STATE, ...props }} >
-            <TagElement className={className} style={varStyle} {...rest}>
+            <TagElement className={`${classPrefix} ${className}`} style={varStyles} {...rest}>
                 {children}
             </TagElement>
         </ConfigProviderContext.Provider>

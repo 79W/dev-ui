@@ -5,6 +5,7 @@ export { default as Loading } from './components/loading'
 export { default as ConfigProvider } from './components/config-provider'
 export { default as Flex } from './components/flex'
 export { default as Grid } from './components/grid'
+export { default as Space } from './components/space'
 
 
 

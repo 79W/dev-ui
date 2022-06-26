@@ -29,11 +29,11 @@ const Icon = forwardRef<SVGSVGElement,IconProps>((props,ref) => {
           .replace(/^-/, '');
     }
 
-    const varStyle = {} as React.CSSProperties;
+    const varStyles = {} as React.CSSProperties;
 
     if (rotate) {
-      varStyle.msTransform = `rotate(${rotate}deg)`;
-      varStyle.transform = `rotate(${rotate}deg)`;
+      varStyles.msTransform = `rotate(${rotate}deg)`;
+      varStyles.transform = `rotate(${rotate}deg)`;
     }
     
     const kebabCaseName = name ? kebabCase(name) : undefined;
@@ -61,7 +61,7 @@ const Icon = forwardRef<SVGSVGElement,IconProps>((props,ref) => {
         width: size ? size : "24",
         height: size ? size : "24",
         stroke: color ? color : "currentColor",
-        style: { ...style, ...varStyle },
+        style: { ...style, ...varStyles },
         ...restProps,
     };
     return cloneElement(children as React.ReactElement, attrs)

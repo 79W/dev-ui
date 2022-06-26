@@ -15,6 +15,11 @@ export default defineConfig({
     includes: ['docs', 'src'],
     passivePreview: true,
   },
+  alias: {
+    'kf-ui/es': process.cwd() + '/src',
+    'aunt/es': process.cwd() + '/src',
+    'demos': process.cwd() + '/src/demos/index.ts',
+  },
   hash: true,
   styles: [
     `
@@ -81,7 +86,7 @@ export default defineConfig({
     '/components': [
       {
         title: '布局组件',
-        children: ['components/flex','components/grid',],
+        children: ['components/flex','components/grid','components/space'],
       },
       {
         title: '基础组件',

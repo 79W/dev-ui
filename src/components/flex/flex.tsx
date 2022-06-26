@@ -41,7 +41,7 @@ const Flex:FunctionComponent<Partial<FlexProps>> = ((props) => {
         [gutter],
     );
 
-    const varStyle = useMemo<CSSProperties | undefined>(()=>{
+    const varStyles = useMemo<CSSProperties | undefined>(()=>{
         return {
             ...(getGutter[0]! > 0
             ? {
@@ -61,7 +61,7 @@ const Flex:FunctionComponent<Partial<FlexProps>> = ((props) => {
 
     return (
         <FlexContext.Provider value={{ gutter: getGutter }}>
-            <div className={varClasses} style={{...varStyle}} {...rest}>   
+            <div className={varClasses} style={{...varStyles}} {...rest}>   
                 {children}
             </div>
         </FlexContext.Provider>

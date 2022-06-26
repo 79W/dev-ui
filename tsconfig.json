@@ -14,9 +14,13 @@
     "typeRoots": ["./src/typings", "./node_modules/@types"],
     "lib": ["ES2015", "DOM"],
     "paths": {
+      "kf-ui": ["src/index.ts"],
+      "kf-ui/src/*": ["src/*"],
+      "kf-ui/es/*": ["src/*"],
       "aunt": ["src/index.ts"],
       "aunt/src/*": ["src/*"],
-      "aunt/es/*": ["src/*"]
+      "aunt/es/*": ["src/*"],
+      "demos": ["src/demos/index.ts"],
     },
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,

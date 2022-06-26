@@ -50,7 +50,7 @@
     cursor: pointer;
     transition: opacity ease 0.15s;
     user-select: none;
-    
+
     &:focus {
         outline: none;
     }
@@ -77,7 +77,6 @@
 
     &--icon{
         .inline-flex-center();
-        padding: var(--aunt-padding-m);
         &--left{
             margin-right: var(--aunt-button-padding-base);
         }
@@ -88,7 +87,6 @@
     &--loading{
         .inline-flex-center();
         cursor: not-allowed;
-        padding: var(--aunt-padding-m);
         &:active::before {
             opacity:0;
         }
@@ -144,27 +142,41 @@
         border-width: var(--aunt-button-border-width-hairline);
     }
 
+    &--text{
+        line-height: var(--aunt-button-line-height-xs);
+    }
+
     &--large {
-        font-size: var(--aunt-button-font-size-lg);
-        line-height: var(--aunt-button-line-height-sm);
-        --aunt-button-padding:  var(--aunt-padding-md) var(--aunt-padding-xl);
-        padding: var(--aunt-padding-md) var(--aunt-padding-xl);
+        .@{class-prefix}-button--text{
+            font-size: var(--aunt-button-font-size-lg);
+            line-height: var(--aunt-button-line-height-sm);
+        }
+        // 14-32
+        padding: var(--aunt-padding-sm) var(--aunt-padding-xl);
     }
 
     &--normal {
-        font-size: var(--aunt-button-font-size-md);
-        line-height: var(--aunt-button-line-height-xs);
-        padding: var(--aunt-padding-m) var(--aunt-padding-lg);
+        .@{class-prefix}-button--text{
+            font-size: var(--aunt-button-font-size-md);
+        }
+        // 8-14
+        padding: var(--aunt-padding-xs) var(--aunt-padding-md);
     }
     
     &--small {
-        font-size: var(--aunt-button-font-size-sm);
-        padding: var(--aunt-padding-s)  var(--aunt-padding-m);
+        .@{class-prefix}-button--text{
+            font-size: var(--aunt-button-font-size-sm);
+        }
+        // 6-12 
+        padding: calc(6*var(--aunt-hd))  var(--aunt-padding-s);
     }
     
     &--mini {
-        font-size: var(--aunt-button-font-size-xs);
-        padding: var(--aunt-padding-xs) var(--aunt-padding-s);
+        .@{class-prefix}-button--text{
+            font-size: var(--aunt-button-font-size-xs);
+        }
+        // 4-4
+        padding: var(--aunt-padding-base) calc(6*var(--aunt-hd));
     }
 
     &--shape{

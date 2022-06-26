@@ -20,7 +20,7 @@ const Grid:FunctionComponent<Partial<GridProps>> = ((props) => {
     const { prefix } = useContext(ConfigProviderContext);
     const classPrefix = `${prefix}-grid`
 
-    const varStyle = useMemo<CSSProperties | undefined>(() => {
+    const varStyles = useMemo<CSSProperties | undefined>(() => {
         const styles: CSSProperties = {}
         if(column){
             styles.gridTemplateColumns = `repeat(${column},minmax(0,1fr))`;
@@ -42,7 +42,7 @@ const Grid:FunctionComponent<Partial<GridProps>> = ((props) => {
         return {...style,...styles};
     }, [style, gap, column]);
 
-    return <div className={classPrefix} style={{...varStyle}}>
+    return <div className={classPrefix} style={{...varStyles}}>
         {props.children}
     </div>
 })

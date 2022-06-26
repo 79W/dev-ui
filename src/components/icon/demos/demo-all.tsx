@@ -2022,7 +2022,7 @@ function Demo (){
     }
 
     return <div className="demo-icon">
-        <p className="demo-icon-title">全部图标</p>
+        <p>全部图标</p>
         <div className="demo-icon-content">
             {
                 iconsList.map((item)=>{

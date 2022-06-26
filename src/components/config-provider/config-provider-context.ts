@@ -5,14 +5,14 @@ import { ConfigProviderProps } from './types'
 export const defaultPrefix = 'aunt';
 
 export type ConfigProviderContextState = {
-    prefix?: string;
+    prefix: string;
 } & Pick<ConfigProviderProps, 'locale'>;
 
 
-export const INITIAL_STATE = {
+export const INITIAL_STATE: ConfigProviderContextState = {
     prefix: defaultPrefix,
     locale,
-} as ConfigProviderContextState;
+};
 
 const ConfigProviderContext: Context<ConfigProviderContextState> = createContext(INITIAL_STATE);
 

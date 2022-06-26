@@ -15,7 +15,7 @@ const GridItem:FunctionComponent<Partial<GridItemProps>> = (props)=>{
     const { prefix } = useContext(ConfigProviderContext);
     const classPrefix = `${prefix}-griditem`
 
-    const varStyle = useMemo<CSSProperties | undefined>(() => {
+    const varStyles = useMemo<CSSProperties | undefined>(() => {
         const styles: CSSProperties = {}
         if(column){
             styles.gridColumnEnd = `span ${column}`;
@@ -28,7 +28,7 @@ const GridItem:FunctionComponent<Partial<GridItemProps>> = (props)=>{
 
     return <div
         className={classPrefix}
-        style={varStyle}
+        style={{...varStyles}}
     >
         {children}
     </div>

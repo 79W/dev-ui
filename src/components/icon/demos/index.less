@@ -1,33 +1,20 @@
-.demo{
-    &-icon{
-        padding: 10px;
-        background-color: #fff;
-        min-height: 100vh;
-        &-title{
-            font-size: 20px;
-            color: '#333';
-            margin: 20px 0;
-            display: inline-block;
-        }
-        &-content{
-            display: flex;
-            flex-wrap: wrap;
-        }
-        &-card{
-            display: flex;
-            align-items: center;
-            justify-content:center ;
-            flex-direction: column;
-            margin:5px;
-            border-radius:10px;
-            cursor:pointer;
-            background-color: #f9fafb;
-        }
-        [data-prefers-color=dark] &-card{
-            background-color: #333;
-        }
+.demo-icon{
+    min-height: 100vh;
+    &-content{
+        display: flex;
+        flex-wrap: wrap;
     }
-    [data-prefers-color=dark] &-icon{
-        background-color: #141414;
+    &-card{
+        display: inline-flex;
+        align-items: center;
+        justify-content:center ;
+        flex-direction: column;
+        margin:5px;
+        border-radius:10px;
+        cursor:pointer;
+        background-color: #f9fafb;
+    }
+    [data-prefers-color=dark] &-card{
+        background-color: #333;
     }
 }
