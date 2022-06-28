@@ -3,8 +3,8 @@ import { defineConfig } from 'dumi'
 export default defineConfig({
   title: 'Aunt Design',
   favicon:
-    'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-ad8d1200-2a6b-490b-8915-4f015cc6cc87/f45ff1f1-36e8-4dbe-a439-a1a09f9184c1.svg',
-  logo: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-ad8d1200-2a6b-490b-8915-4f015cc6cc87/f45ff1f1-36e8-4dbe-a439-a1a09f9184c1.svg',
+    'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-ad8d1200-2a6b-490b-8915-4f015cc6cc87/3c637506-9024-4153-baa7-fa7b66c87f67.svg',
+  logo: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-ad8d1200-2a6b-490b-8915-4f015cc6cc87/3c637506-9024-4153-baa7-fa7b66c87f67.svg',
   outputPath: 'docs-dist',
   mode: 'site',
   locales: [
