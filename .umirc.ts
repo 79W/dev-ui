@@ -72,6 +72,10 @@ export default defineConfig({
         title: '快速开始',
         path: '/guide/quick-start',
       },
+      {
+        title: '项目进度',
+        path: '/guide/progress',
+      }
     ],
     '/en/guide': [
       {
@@ -82,6 +86,10 @@ export default defineConfig({
         title: 'Quick Start',
         path: '/en/guide/quick-start',
       },
+      {
+        title: 'Progress',
+        path: '/en/guide/progress',
+      }
     ],
     '/components': [
       {
@@ -90,7 +98,7 @@ export default defineConfig({
       },
       {
         title: '基础组件',
-        children: ['components/button','components/icon'],
+        children: ['components/button','components/icon','components/typography'],
       },
       // {
       //   title: '表单组件',
