@@ -120,7 +120,7 @@ export default defineConfig({
     '/en/components': [
       {
         title: 'Basic Components',
-        children: ['components/button'],
+        children: [''],
       },
     ],
   },
