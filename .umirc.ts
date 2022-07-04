@@ -32,6 +32,9 @@ export default defineConfig({
     html {
       min-height: 100vh;
     }
+    #root .__dumi-default-navbar-tool{
+      display: none;
+    }
     `,
   ],
   metas: [
@@ -53,13 +56,13 @@ export default defineConfig({
     // 需要自定义侧边菜单的路径，没有配置的路径还是会使用自动生成的配置
     '/': [
       {
-        title: 'Home',
+        title: '首页',
         path: 'index',
       },
     ],
     '/en': [
       {
-        title: '首页',
+        title: 'Home',
         path: 'index',
       },
     ],
