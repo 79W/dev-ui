@@ -7,6 +7,8 @@ export { default as Flex } from './components/flex'
 export { default as Grid } from './components/grid'
 export { default as Space } from './components/space'
 export { Typography } from './components/typography'
+export { default as Image } from './components/image'
+export { default as LazyLoad } from './components/lazy-load'
 
 
 

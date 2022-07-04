@@ -3,7 +3,7 @@ import styles from './home-page.less'
 import { context } from 'dumi/theme'
 
 export default () => {
-
+  // console.log('\n %c Aunt 组件库 %c \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
   const { locale } = useContext(context)
 
   function trans<T>(en: T, zh: T) {

@@ -98,7 +98,7 @@ export default defineConfig({
       },
       {
         title: '基础组件',
-        children: ['components/button','components/icon','components/typography'],
+        children: ['components/button','components/icon','components/typography','components/image'],
       },
       // {
       //   title: '表单组件',
@@ -108,10 +108,10 @@ export default defineConfig({
         title: '反馈组件',
         children: ['components/loading'],
       },
-      // {
-      //   title: '展示组件',
-      //   children: [],
-      // },
+      {
+        title: '展示组件',
+        children: ['components/lazy-load'],
+      },
       // {
       //   title: '导航组件',
       //   children: [],

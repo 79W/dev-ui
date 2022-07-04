@@ -1,12 +1,11 @@
 import React from "react";
+import { } from 'kf-ui'
+import { DemoBlock } from 'demos'
 import './index.less'
 
 function Demo (){
-    return <div className="demo-button">
-        <p className="demo-button-title" ></p>
-        <div className="demo-button-content">
-
-        </div>
+    return <div className="demo">
+        
     </div>
 }
 

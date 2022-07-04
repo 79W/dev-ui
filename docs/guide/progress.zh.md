@@ -9,7 +9,7 @@
 - ✅ Button 按钮 
 - ✅ Icon 图标
 - ✅ Typography 文本
-- Image 图片
+- ✅ Image 图片
 - Popup 弹出层
 - Toast 轻提示
 ### 表单组件（16）
@@ -39,7 +39,8 @@
 - PullRefresh 下拉刷新
 - ShareSheet 分享面板
 - SwipeCell 滑动单元格
-### 展示组件（20）
+### 展示组件（21）
+- Avatar 头像
 - Badge 徽标
 - Card 卡片
 - Circle 环形进度条
@@ -49,7 +50,7 @@
 - Divider 分割线
 - FloatingBall 悬浮球 
 - ImagePreview 图片预览
-- Lazyload 懒加载
+- ✅ Lazyload 懒加载
 - List 列表
 - Skeleton 骨架屏
 - Steps 步骤条
