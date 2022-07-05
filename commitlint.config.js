@@ -9,9 +9,8 @@
 * style：仅样式改动
 * docs：仅文档新增/改动
 * chore：构建过程或辅助工具的变动
-* test： 测试
+* test：测试
 */
-
 
 const types = ['feat', 'fix', 'docs', 'style', 'refactor', 'test', 'chore', 'perf', 'update'];
 
