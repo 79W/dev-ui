@@ -3,4 +3,4 @@
 
 # commitlint config example
 # https://github.com/conventional-changelog/commitlint/blob/master/@commitlint/config-conventional/index.js
-npx commitlint --edit $1
+npx --no-install commitlint --edit ""
