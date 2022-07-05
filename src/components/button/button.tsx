@@ -141,7 +141,7 @@ export const Button:FunctionComponent<Partial<ButtonProps>> = ((props) => {
     >   
         {iconPosition === 'left' && renderIcon('left')}
         {renderText()}
-        {iconPosition === 'right' && renderIcon('right')}
+        {iconPosition === 'right' && renderIcon('right')
     </div>
 })
 
