@@ -1,7 +1,7 @@
 <p align="center">
     <img alt="logo" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-ad8d1200-2a6b-490b-8915-4f015cc6cc87/3c637506-9024-4153-baa7-fa7b66c87f67.svg" width="200" style="margin-bottom: 10px;">
 </p>
-<p align="center" style="font-size:50px;font-weight: bold;">Aunt</p>
+<h3 align="center">  Aunt</h3>
 
 <p align="center">🔥 一个简单清晰的移动端UI组件库 - Aunt. 🔥</p>
 
