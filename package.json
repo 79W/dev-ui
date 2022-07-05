@@ -46,12 +46,6 @@
     "branch": "master",
     "platform": "github"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged", 
-      "commit-msg": "npx --no-install commitlint --edit $1"
-    }
-  },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": [
       "eslint --fix"
