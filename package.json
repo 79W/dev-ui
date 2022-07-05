@@ -68,6 +68,7 @@
   },
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.18.2",
+    "@commitlint/cli": "^17.0.3",
     "@testing-library/jest-dom": "^5.15.1",
     "@testing-library/react": "^12.1.2",
     "@types/jest": "^27.0.3",
