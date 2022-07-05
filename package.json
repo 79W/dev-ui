@@ -46,9 +46,6 @@
     "branch": "master",
     "platform": "github"
   },
-  "gitHooks": {
-    "pre-commit": "lint-staged"
-  },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": [
       "eslint --fix"

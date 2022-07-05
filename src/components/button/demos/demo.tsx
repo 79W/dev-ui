@@ -5,7 +5,7 @@ import './index.less'
 
 function Demo (){
     return <>
-        <DemoBlock title="按钮类型2">
+        <DemoBlock title="按钮类型">
             <div className="demo-button">
                 <Button>默认按钮</Button>
                 <Button type="primary" >主要按钮</Button>
