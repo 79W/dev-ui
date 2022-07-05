@@ -1,5 +1,5 @@
 import React from "react";
-import {AuntIconActivity,AuntIconAlertOctagon,AuntIconLoader,AuntIconFileMinus} from 'kf-ui'
+import {AuntIconActivity,AuntIconAlertOctagon,AuntIconLoader,AuntIconFileMinus} from 'aunt'
 import { DemoBlock } from 'demos'
 import './index.less'
 

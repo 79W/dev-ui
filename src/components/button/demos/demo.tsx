@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, AuntIconAlertCircle } from 'kf-ui'
+import { Button, AuntIconAlertCircle } from 'aunt'
 import { DemoBlock } from 'demos'
 import './index.less'
 

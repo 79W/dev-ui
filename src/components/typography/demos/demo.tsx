@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography } from 'kf-ui'
+import { Typography } from 'aunt'
 import { DemoBlock } from 'demos'
 import './index.less'
 

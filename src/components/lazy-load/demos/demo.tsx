@@ -1,5 +1,5 @@
 import React from "react";
-import { Image,Space,LazyLoad,Typography } from 'kf-ui'
+import { Image,Space,LazyLoad,Typography } from 'aunt'
 import { DemoBlock } from 'demos'
 import './index.less'
 

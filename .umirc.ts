@@ -16,7 +16,6 @@ export default defineConfig({
     passivePreview: true,
   },
   alias: {
-    'kf-ui/es': process.cwd() + '/src',
     'aunt/es': process.cwd() + '/src',
     'demos': process.cwd() + '/src/demos/index.ts',
   },
@@ -192,7 +191,7 @@ export default defineConfig({
       },
       {
         title: 'Github',
-        path: 'https://github.com/79E/Rant',
+        path: 'https://github.com/79E/aunt',
       },
     ],
     en: [
@@ -206,7 +205,7 @@ export default defineConfig({
       },
       {
         title: 'Github',
-        path: 'https://github.com/79E/Rant',
+        path: 'https://github.com/79E/aunt',
       },
     ],
   },

@@ -1,6 +1,6 @@
 import React from "react";
 import { useCopy } from 'dumi/theme'
-import * as Icons from 'kf-ui'
+import * as Icons from 'aunt'
 import './index.less'
 
 const iconsList = [

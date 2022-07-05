@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex } from 'kf-ui'
+import { Flex } from 'aunt'
 import { DemoBlock } from 'demos'
 import './index.less'
 

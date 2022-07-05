@@ -1,5 +1,5 @@
 import React from "react";
-import { Image,Flex,Loading, AuntIconWifiOff  } from 'kf-ui'
+import { Image,Flex,Loading, AuntIconWifiOff  } from 'aunt'
 import { DemoBlock } from 'demos'
 import './index.less'
 

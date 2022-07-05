@@ -1,5 +1,5 @@
 import React from "react";
-import { ConfigProvider, Button } from 'kf-ui'
+import { ConfigProvider, Button } from 'aunt'
 import { DemoBlock } from 'demos'
 
 function Demo (){

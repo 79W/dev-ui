@@ -1,5 +1,5 @@
 import React from "react";
-import { Loading } from 'kf-ui'
+import { Loading } from 'aunt'
 import './index.less'
 
 function Demo (){
