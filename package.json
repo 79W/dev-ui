@@ -46,8 +46,11 @@
     "branch": "master",
     "platform": "github"
   },
-  "gitHooks": {
-    "pre-commit": "lint-staged"
+  "husky": {
+    "hooks":{
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": [
@@ -69,6 +72,7 @@
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.18.2",
     "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
     "@testing-library/jest-dom": "^5.15.1",
     "@testing-library/react": "^12.1.2",
     "@types/jest": "^27.0.3",
@@ -90,6 +94,7 @@
     "gulp-postcss": "^9.0.1",
     "gulp-replace": "^1.1.3",
     "gulp-typescript": "^6.0.0-alpha.1",
+    "husky": "^8.0.1",
     "less": "^4.1.3",
     "lint-staged": "^13.0.0",
     "postcss-px-multiple": "^0.1.5",

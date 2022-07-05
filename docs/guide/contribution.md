@@ -69,6 +69,8 @@ feat 与 fix 提交将被用于生成更新日志(changelog)
 
 feat：新功能
 
+update：更新某功能
+
 fix：修补 bug
 
 docs：文档类变动
