@@ -32,7 +32,7 @@ export default defineConfig({
     html {
       min-height: 100vh;
     }
-    #root .__dumi-default-navbar-tool{
+    #root .__dumi-default-navbar-tool .__dumi-default-locale-select{
       display: none;
     }
     `,
@@ -76,6 +76,18 @@ export default defineConfig({
         path: '/guide/quick-start',
       },
       {
+        title: '开发指南',
+        path: '/guide/contribution',
+      },
+      {
+        title: '更新记录',
+        path: '/guide/changelog',
+      },
+      {
+        title: '国际化',
+        path: '/guide/i18n',
+      },
+      {
         title: '项目进度',
         path: '/guide/progress',
       }
@@ -93,6 +105,18 @@ export default defineConfig({
         title: 'Progress',
         path: '/en/guide/progress',
       }
+    ],
+    '/hooks': [
+      {
+        title: 'useInViewport ',
+        path: '/hooks/use-in-viewport',
+      }
+    ],
+    '/blog': [
+      {
+        title: '组件开发',
+        children:['blog/components/button']
+      },
     ],
     '/components': [
       {
@@ -157,6 +181,14 @@ export default defineConfig({
       {
         title: '组件',
         path: '/components',
+      },
+      {
+        title: 'Hooks',
+        path: '/hooks',
+      },
+      {
+        title: '开发日记',
+        path: '/blog',
       },
       {
         title: 'Github',
