@@ -49,17 +49,12 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged", 
-      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS"
+      "commit-msg": "commitlint -E $HUSKY_GIT_PARAMS"
     }
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": [
       "eslint --fix"
-    ]
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
     ]
   },
   "peerDependencies": {
