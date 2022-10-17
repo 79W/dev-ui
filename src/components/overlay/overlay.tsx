@@ -19,7 +19,7 @@ export const Overlay:FunctionComponent<OverlayProps> = ((props) => {
     const nodeRef = useRef(null);
 
     const renderOverlay = () => {
-        const styles: CSSProperties = {
+        const styles = {
           zIndex: props.zIndex !== undefined ? +props.zIndex : undefined,
           touchAction: lockScroll && 'none',
           ...props.style,
@@ -33,7 +33,7 @@ export const Overlay:FunctionComponent<OverlayProps> = ((props) => {
         return (
           <div
             ref={nodeRef}
-            style={styles}
+            style={styles as CSSProperties}
             onClick={props.onClick}
             className={joinTrim([
                 ns.b(),
