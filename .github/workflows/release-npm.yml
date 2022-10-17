@@ -5,6 +5,7 @@ on:
   push:
     tags: [ v* ]
   workflow_dispatch:
+
 jobs:
   deploy:
     runs-on: ubuntu-18.04
@@ -14,18 +15,21 @@ jobs:
       - name: setup node
         uses: actions/setup-node@v2
         with:
-          node-version: 14
+          node-version: 16
       - name: Run Npm Scripts
         run: |
+          echo github.ref
           node -v
-          yarn -v
-          yarn
-          yarn run build:docs
-      - name: Page Url
-        run: |
-          echo "aunt.design" > ./docs-dist/CNAME
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+          npm -v
+          npm install
+          npm run build
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          github_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          publish_dir: ./docs-dist
+          tag_name: ${{ github.ref }}
+          release_name: ${{ github.ref }}
+          draft: false
+          prerelease: false
