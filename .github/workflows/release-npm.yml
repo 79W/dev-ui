@@ -18,7 +18,7 @@ jobs:
           node-version: 16
       - name: Run Npm Scripts
         run: |
-          echo github.ref
+          echo ${{ github.ref }}
           node -v
           npm -v
           npm install
