@@ -24,7 +24,7 @@ jobs:
           npm install
           npm run build
           cd lib
-          npm publish
+          npm publish --tag
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN_CESHI1 }}
 
