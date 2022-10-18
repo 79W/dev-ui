@@ -20,7 +20,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - name: Get version
         id: get_version
-        run: echo ::setOutput name=VERSION::${GITHUB_REF/refs\/tags\/v}
+        run: echo name=VERSION::${GITHUB_REF/refs\/tags\/v} >> $GITHUB_OUTPUT
       - name: Run Npm Scripts
         run: |
           node -v
