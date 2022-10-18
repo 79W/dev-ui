@@ -18,12 +18,15 @@ jobs:
         with:
           node-version: 16
           registry-url: 'https://registry.npmjs.org'
+      - name: Get version
+        id: get_version
+        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
       - name: Run Npm Scripts
         run: |
           node -v
           npm -v
           npm install
-          echo ${{ github.ref }}
+          echo ${{ steps.get_version.outputs.VERSION }}
           node -e 'var pkg = require("./package.json"); pkg.version= "${{ github.ref }}"; require("fs").writeFileSync("./package.json", JSON.stringify(pkg, null, 2))'
           npm run build
           cd lib
