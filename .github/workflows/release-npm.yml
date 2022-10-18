@@ -3,8 +3,9 @@ name: Release NPM
 # 触发
 on:
   push:
-    tags:
-      - v*
+    tags: [ v* ]
+  workflow_dispatch:
+
 jobs:
   deploy:
     runs-on: ubuntu-18.04
@@ -21,19 +22,19 @@ jobs:
           npm -v
           npm install
           npm run build
-      - name: NPM Publish
-        uses: pascalgn/npm-publish-action@1.3.9
-        run:
-          cd lib
-        with: # All of theses inputs are optional
-          # echo ${{ github.ref }}
-          tag_name: "v%s"
-          tag_message: "v%s"
-          create_tag: "false"
-          commit_pattern: "^Release (\\S+)"
-          workspace: "."
-          publish_command: "yarn"
-          publish_args: "--non-interactive"
-        env: # More info about the environment variables in the README
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Leave this as is, it's automatically generated
-          NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN_CESHI1 }} # You need to set this in your repo settings
+      # - name: NPM Publish
+      #   uses: pascalgn/npm-publish-action@1.3.9
+      #   run:
+      #     cd lib
+      #   with: # All of theses inputs are optional
+      #     # echo ${{ github.ref }}
+      #     tag_name: "v%s"
+      #     tag_message: "v%s"
+      #     create_tag: "false"
+      #     commit_pattern: "^Release (\\S+)"
+      #     workspace: "."
+      #     publish_command: "yarn"
+      #     publish_args: "--non-interactive"
+      #   env: # More info about the environment variables in the README
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Leave this as is, it's automatically generated
+      #     NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN_CESHI1 }} # You need to set this in your repo settings
