@@ -26,10 +26,12 @@ jobs:
           node -v
           npm -v
           npm install
-          echo ${{ steps.get_version.outputs.VERSION }}
-          node -e 'var pkg = require("./package.json"); pkg.version= "${{ github.ref }}"; require("fs").writeFileSync("./package.json", JSON.stringify(pkg, null, 2))'
+          echo "### Set package version number  :rocket:" >> $GITHUB_STEP_SUMMARY
+          node -e 'var pkg = require("./package.json"); pkg.version= "${{ steps.get_version.outputs.VERSION }}"; require("fs").writeFileSync("./package.json", JSON.stringify(pkg, null, 2))'
+          echo "### Start Build  :rocket:" >> $GITHUB_STEP_SUMMARY
           npm run build
           cd lib
+          echo "### Start Publish  :rocket:" >> $GITHUB_STEP_SUMMARY
           npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN_CESHI1 }}
