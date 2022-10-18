@@ -1,6 +1,5 @@
 {
   "name": "kf-ui",
-  "version": "0.0.1",
   "description": "KFUI",
   "scripts": {
     "start": "dumi dev",
