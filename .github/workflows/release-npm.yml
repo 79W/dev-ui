@@ -23,14 +23,9 @@ jobs:
           node -v
           npm -v
           npm install
-      - name: Version
-        run: |
           echo ${{ github.ref }}
           node -e 'var pkg = require("./package.json"); pkg.version= "${{ github.ref }}"; require("fs").writeFileSync("./package.json", JSON.stringify(pkg, null, 2))'
-      - name: Build
-        run: |
           npm run build
-      - name: Publish
           cd lib
           npm publish
         env:
